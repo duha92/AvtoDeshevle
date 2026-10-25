@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>АвтоДешевле — Привоз авто из Японии во Владивосток</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Google Fonts Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              orange: '#e85319',
+              brightOrange: '#ff5500',
+              darkOrange: '#cc4400',
+              bg: '#0b0d10',
+              card: '#14171f',
+              cardHover: '#1a1e29',
+              cardBorder: '#262b38',
+              textMuted: '#a0a8bd'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* МИРОВОЙ СТАНДАРТ ПРЕМИАЛЬНОГО ФОНА: Глубокий градиент + Инженерная сетка */
+    body {
+      background-color: #030508;
+      color: #f3f5f8;
+      background-image: 
+        radial-gradient(circle at 15% 20%, rgba(232, 83, 25, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 80%, rgba(0, 136, 204, 0.06) 0%, transparent 40%),
+        linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+      background-attachment: fixed;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #14171f;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #262b38;
+      border-radius: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #ff5500;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased selection:bg-brand-brightOrange selection:text-white pb-24 md:pb-0 relative overflow-x-hidden">
+
+  <!-- СВЕТОВЫЕ АТМОСФЕРНЫЕ АУРА-АКЦЕНТЫ НА ЗАДНЕМ ФОНЕ -->
+  <div class="fixed top-[-10%] left-[20%] w-[700px] h-[700px] bg-brand-brightOrange/5 rounded-full blur-[160px] pointer-events-none -z-10"></div>
+  <div class="fixed bottom-[-10%] right-[10%] w-[600px] h-[600px] bg-blue-600/5 rounded-full blur-[160px] pointer-events-none -z-10"></div>
+
+  <!-- STICKY HEADER -->
+  <header class="sticky top-0 z-50 bg-[#05070a]/90 backdrop-blur-md border-b border-brand-cardBorder transition-all duration-300 relative overflow-visible">
+    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1920&auto=format&fit=crop')] bg-cover bg-center opacity-20 -z-10"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-[#05070a]/95 via-[#0b0d10]/90 to-[#05070a]/95 -z-10"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      
+      <!-- LEFT: BURGER BUTTON & LOGO -->
+      <div class="flex items-center gap-3">
+        <button onclick="toggleMobileMenu()" class="w-10 h-10 rounded-xl bg-brand-card/90 hover:bg-brand-cardHover border border-brand-cardBorder text-white flex items-center justify-center transition-colors shadow-lg cursor-pointer">
+          <i class="fa-solid fa-bars text-lg text-brand-brightOrange"></i>
+        </button>
+
+        <a href="#" class="flex items-center gap-3 group shrink-0">
+          <div class="h-11 px-3 bg-white rounded-2xl flex items-center justify-center shadow-lg shrink-0 group-hover:scale-105 transition-transform">
+            <svg viewBox="0 0 210 120" class="h-8 w-auto">
+              <path d="M 85 16 A 46 46 0 1 0 85 104 A 54 54 0 0 1 85 16 Z" fill="#1c1c1c" />
+              <g fill="#e85319">
+                <path d="M 106 23 A 44 44 0 0 1 124 16 C 127 28, 129 34, 133 34 C 137 34, 139 28, 142 16 A 44 44 0 0 1 160 23 L 143 44 C 136 39, 130 39, 123 44 Z" />
+                <path d="M 106 97 A 44 44 0 0 0 124 104 C 127 92, 129 86, 133 86 C 137 86, 139 92, 142 104 A 44 44 0 0 0 160 97 L 143 76 C 136 81, 130 81, 123 76 Z" />
+                <path d="M 96 33 A 44 44 0 0 0 89 51 C 101 54, 107 56, 107 60 C 107 64, 101 66, 89 69 A 44 44 0 0 0 96 87 L 117 70 C 112 63, 112 57, 117 50 Z" />
+                <path d="M 170 33 A 44 44 0 0 1 177 51 C 165 54, 159 56, 159 60 C 159 64, 165 66, 177 69 A 44 44 0 0 1 170 87 L 149 70 C 154 63, 154 57, 149 50 Z" />
+              </g>
+            </svg>
+          </div>
+          
+          <div class="flex flex-col">
+            <span class="text-lg sm:text-xl font-black tracking-wider uppercase text-white leading-none group-hover:text-brand-brightOrange transition-colors">
+              АВТОДЕШЕВЛЕ
+            </span>
+            <span class="text-[9px] font-bold tracking-widest text-brand-orange uppercase mt-1">
+              Максимальная выгода для вашего бюджета
+            </span>
+          </div>
+        </a>
+      </div>
+
+      <!-- CENTER: DESKTOP NAVIGATION MENU -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-bold text-brand-textMuted">
+        <a href="#calculator" class="hover:text-white transition-colors">Калькулятор</a>
+        <a href="#conditions" class="hover:text-white transition-colors">Условия</a>
+        <a href="#catalog" class="hover:text-white transition-colors">Примеры авто</a>
+        <a href="#contacts" class="hover:text-white transition-colors">Контакты</a>
+      </nav>
+
+      <!-- RIGHT: INTERACTIVE CONTACT DROPDOWN -->
+      <div class="relative">
+        <button onclick="toggleContactDropdown()" id="contactBtn"
+                class="h-10 px-4 bg-brand-brightOrange hover:bg-brand-darkOrange text-white font-bold rounded-xl text-xs sm:text-sm flex items-center gap-2 transition-all shadow-lg cursor-pointer">
+          <i class="fa-solid fa-headset text-base"></i>
+          <span>Связаться</span>
+          <i class="fa-solid fa-chevron-down text-xs transition-transform" id="contactChevron"></i>
+        </button>
+
+        <div id="contactDropdown" class="absolute right-0 mt-3 w-64 bg-[#14171f] border border-brand-cardBorder rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.8)] hidden flex-col p-2 z-[99999]">
+          <div class="px-3 py-2 text-xs font-bold uppercase tracking-wider text-brand-textMuted border-b border-brand-cardBorder mb-1">
+            Выберите способ связи:
+          </div>
+          <a href="https://wa.me/79143275734" target="_blank" rel="noopener noreferrer" 
+             class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-[#25D366]/20 text-white hover:text-[#25D366] text-sm font-bold transition-colors">
+            <i class="fa-brands fa-whatsapp text-lg text-[#25D366]"></i> WhatsApp чат
+          </a>
+          <a href="https://t.me/AvtoDeshevleVL" target="_blank" rel="noopener noreferrer" 
+             class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-[#0088cc]/20 text-white hover:text-[#33b5e5] text-sm font-bold transition-colors">
+            <i class="fa-brands fa-telegram text-lg text-[#33b5e5]"></i> Telegram менеджер
+          </a>
+          <a href="#" onclick="alert('Мессенджер MAX: АвтоДешевле (+7 914 327-57-34)'); return false;" 
+             class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-brand-brightOrange/20 text-white hover:text-brand-brightOrange text-sm font-bold transition-colors">
+            <i class="fa-solid fa-comments text-lg text-brand-brightOrange"></i> Мессенджер MAX
+          </a>
+          <a href="mailto:Avto-Deshevle.2025@yandex.ru" 
+             class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/10 text-white text-sm font-bold transition-colors border-t border-brand-cardBorder mt-1 pt-2">
+            <i class="fa-solid fa-envelope text-lg text-brand-orange"></i> Avto-Deshevle.2025@yandex.ru
+          </a>
+          <a href="tel:79143275734" 
+             class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/10 text-white text-sm font-bold transition-colors">
+            <i class="fa-solid fa-phone text-lg text-green-400"></i> +7 (914) 327-57-34
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- MOBILE / SIDEBAR MENU OVERLAY -->
+  <div id="mobileMenu" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex-col justify-start p-6 transition-all">
+    <div class="bg-brand-card/95 backdrop-blur-md border border-brand-cardBorder rounded-3xl p-6 max-w-sm w-full mx-auto mt-12 shadow-2xl space-y-6 relative">
+      <div class="flex items-center justify-between pb-4 border-b border-brand-cardBorder">
+        <span class="text-lg font-black text-white">Меню сайта</span>
+        <button onclick="toggleMobileMenu()" class="w-9 h-9 rounded-full bg-brand-bg text-white font-bold flex items-center justify-center hover:bg-brand-brightOrange transition-colors cursor-pointer">
+          ✕
+        </button>
+      </div>
+
+      <div class="space-y-3 font-bold text-base">
+        <a href="#calculator" onclick="toggleMobileMenu()" class="block p-3 rounded-xl bg-brand-bg hover:bg-brand-brightOrange/20 hover:text-brand-brightOrange transition-colors">
+          🧮 Калькулятор стоимости
+        </a>
+        <a href="#conditions" onclick="toggleMobileMenu()" class="block p-3 rounded-xl bg-brand-bg hover:bg-brand-brightOrange/20 hover:text-brand-brightOrange transition-colors">
+          📄 Условия и гарантии заказа
+        </a>
+        <a href="#catalog" onclick="toggleMobileMenu()" class="block p-3 rounded-xl bg-brand-bg hover:bg-brand-brightOrange/20 hover:text-brand-brightOrange transition-colors">
+          🚗 Примеры доставленных авто
+        </a>
+        <a href="#contacts" onclick="toggleMobileMenu()" class="block p-3 rounded-xl bg-brand-bg hover:bg-brand-brightOrange/20 hover:text-brand-brightOrange transition-colors">
+          📞 Контакты и связь
+        </a>
+        <a href="#" onclick="openPolicyModal(); toggleMobileMenu(); return false;" class="block p-3 rounded-xl bg-brand-bg hover:bg-brand-brightOrange/20 hover:text-brand-brightOrange transition-colors text-xs text-brand-textMuted">
+          🔒 Политика конфиденциальности (ФЗ-152)
+        </a>
+      </div>
+
+      <div class="pt-4 border-t border-brand-cardBorder space-y-2">
+        <div class="text-xs text-brand-textMuted font-bold">Быстрая связь:</div>
+        <div class="grid grid-cols-2 gap-2">
+          <a href="https://t.me/AvtoDeshevleVL" target="_blank" class="bg-[#0088cc]/20 text-[#0088cc] p-2.5 rounded-xl text-xs font-bold text-center">Telegram</a>
+          <a href="https://wa.me/79143275734" target="_blank" class="bg-[#25D366]/20 text-[#25D366] p-2.5 rounded-xl text-xs font-bold text-center">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 mt-6">
+
+    <!-- HERO SECTION -->
+    <section class="relative rounded-3xl overflow-hidden border border-brand-cardBorder shadow-2xl py-24 sm:py-32 px-6 text-center">
+      <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=1920&auto=format&fit=crop')] bg-cover bg-center opacity-40"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-[#0b0d10]/60 via-[#0b0d10]/80 to-[#0b0d10]/95"></div>
+
+      <div class="relative z-10 max-w-4xl mx-auto">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-brightOrange/20 border border-brand-brightOrange/50 text-brand-brightOrange text-xs sm:text-sm font-bold mb-6 backdrop-blur-md">
+          <i class="fa-solid fa-ship"></i> Прямой привоз автомобилей из Японии во Владивосток
+        </div>
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight drop-shadow-lg">
+          Автомобили под заказ с аукционов Японии
+        </h1>
+        <p class="mt-5 text-base sm:text-xl text-brand-textMuted max-w-3xl mx-auto leading-relaxed font-medium">
+          Прозрачный расчёт стоимости «под ключ» во Владивостоке. Фиксированная комиссия <span class="text-white font-bold">30 000 ₽</span>, 100% возвратный аванс и прямая оплата по инвойсу.
+        </p>
+      </div>
+    </section>
+
+    <!-- CALCULATOR SECTION -->
+    <section id="calculator" class="bg-brand-card/85 backdrop-blur-md border border-brand-cardBorder rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+      <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1920&auto=format&fit=crop')] bg-cover bg-center opacity-25 -z-10"></div>
+      <div class="absolute inset-0 bg-[#0b0d10]/85 -z-10"></div>
+
+      <div class="flex items-center gap-4 mb-8">
+        <div class="w-12 h-12 rounded-2xl bg-brand-brightOrange/15 border border-brand-brightOrange/40 flex items-center justify-center text-brand-brightOrange text-xl font-bold">
+          <i class="fa-solid fa-calculator"></i>
+        </div>
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-black text-white">Калькулятор привоза авто</h2>
+          <p class="text-sm sm:text-base text-brand-textMuted">Точный расчёт всех расходов во Владивостоке</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        
+        <div class="space-y-3">
+          <label class="block text-sm font-bold uppercase tracking-wider text-brand-textMuted">
+            Цена на аукционе в Японии (¥ иены)
+          </label>
+          <div class="relative">
+            <input type="number" id="auctionPrice" value="1000000" oninput="calculateTotal()" 
+                   class="w-full bg-brand-bg/95 border border-brand-cardBorder rounded-2xl px-5 py-4 text-white font-black text-xl focus:outline-none focus:border-brand-brightOrange transition-colors">
+            <span class="absolute right-5 top-1/2 -translate-y-1/2 text-brand-textMuted font-bold text-xl">¥</span>
+          </div>
+          <!-- Обновленная ссылка на Drom.ru -->
+          <a href="https://www.drom.ru/world/japan/" target="_blank" rel="noopener noreferrer" 
+             class="flex items-center justify-center gap-2.5 w-full bg-brand-brightOrange/15 hover:bg-brand-brightOrange/25 border border-brand-brightOrange/40 text-brand-brightOrange font-bold py-3.5 px-4 rounded-xl text-sm transition-all shadow-md">
+            <i class="fa-solid fa-chart-line text-lg"></i>
+            <span>Статистика продаж на Drom.ru</span>
+          </a>
+        </div>
+
+        <div class="space-y-3">
+          <label class="block text-sm font-bold uppercase tracking-wider text-brand-textMuted">
+            Таможенная пошлина в РФ (₽ рубли)
+          </label>
+          <div class="relative">
+            <input type="number" id="customsDuty" value="250000" oninput="calculateTotal()" 
+                   class="w-full bg-brand-bg/95 border border-brand-cardBorder rounded-2xl px-5 py-4 text-white font-black text-xl focus:outline-none focus:border-brand-brightOrange transition-colors">
+            <span class="absolute right-5 top-1/2 -translate-y-1/2 text-brand-textMuted font-bold text-xl">₽</span>
+          </div>
+          <a href="https://www.tks.ru/auto/calc/" target="_blank" rel="noopener noreferrer" 
+             class="flex items-center justify-center gap-2.5 w-full bg-brand-brightOrange/15 hover:bg-brand-brightOrange/25 border border-brand-brightOrange/40 text-brand-brightOrange font-bold py-3.5 px-4 rounded-xl text-sm transition-all shadow-md">
+            <i class="fa-solid fa-calculator text-lg"></i>
+            <span>Посчитать пошлину на TKS.ru</span>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="bg-brand-bg/95 border border-brand-cardBorder rounded-2xl p-6 sm:p-8 space-y-4 text-base sm:text-lg">
+        <div class="flex justify-between items-center text-brand-textMuted">
+          <span>Аукционная стоимость в рублях (курс 0.60):</span>
+          <span id="auctionRub" class="font-bold text-white">600 000 ₽</span>
+        </div>
+        <div class="flex justify-between items-center text-brand-textMuted">
+          <span>Расходы по Японии + фрахт (120 000 ¥):</span>
+          <span class="font-bold text-white">72 000 ₽</span>
+        </div>
+        <div class="flex justify-between items-center text-brand-textMuted">
+          <span>Расходы в РФ (ПРР, СБКТС, лаборатория, брокер):</span>
+          <span class="font-bold text-white">60 000 ₽</span>
+        </div>
+        <div class="flex justify-between items-center text-brand-textMuted">
+          <span>Комиссия компании «АвтоДешевле»:</span>
+          <span class="font-bold text-brand-brightOrange">30 000 ₽</span>
+        </div>
+        <div class="flex justify-between items-center text-brand-textMuted">
+          <span>Таможенная пошлина:</span>
+          <span id="dutyResult" class="font-bold text-white">250 000 ₽</span>
+        </div>
+
+        <div class="pt-5 border-t border-brand-cardBorder flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <span class="text-xl sm:text-2xl font-black text-white">Итоговая стоимость под ключ во Владивостоке:</span>
+          <span id="totalPrice" class="text-3xl sm:text-5xl font-black text-brand-brightOrange">1 012 000 ₽</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- INSTRUCTIONS & CONDITIONS SECTION -->
+    <section id="conditions" class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      
+      <div class="bg-brand-card/80 backdrop-blur-md border border-brand-cardBorder rounded-3xl p-6 sm:p-10 flex flex-col justify-between shadow-xl relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=1920&auto=format&fit=crop')] bg-cover bg-center opacity-25 -z-10"></div>
+        <div class="absolute inset-0 bg-[#0b0d10]/85 -z-10"></div>
+
+        <div>
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-12 h-12 rounded-2xl bg-brand-brightOrange/15 border border-brand-brightOrange/40 flex items-center justify-center text-brand-brightOrange font-bold text-xl shrink-0">
+              <i class="fa-solid fa-list-ol"></i>
+            </div>
+            <h3 class="text-2xl sm:text-3xl font-black text-white">Как рассчитать стоимость авто</h3>
+          </div>
+
+          <ol class="space-y-5 text-base sm:text-lg text-brand-textMuted leading-relaxed">
+            <li class="flex gap-4">
+              <span class="w-8 h-8 rounded-xl bg-brand-brightOrange text-white font-black flex items-center justify-center text-base shrink-0 mt-0.5">1</span>
+              <span>Откройте статистику продаж на <strong class="text-white">Drom.ru</strong> и посмотрите, за сколько иен (¥) продаются нужные вам автомобили на аукционах Японии.</span>
+            </li>
+            <li class="flex gap-4">
+              <span class="w-8 h-8 rounded-xl bg-brand-brightOrange text-white font-black flex items-center justify-center text-base shrink-0 mt-0.5">2</span>
+              <span>Перейдите на таможенный калькулятор <strong class="text-white">TKS.ru</strong>, укажите год выпуска, объём и мощность двигателя, чтобы узнать точную пошлину в рублях (₽).</span>
+            </li>
+            <li class="flex gap-4">
+              <span class="w-8 h-8 rounded-xl bg-brand-brightOrange text-white font-black flex items-center justify-center text-base shrink-0 mt-0.5">3</span>
+              <span>Подставьте эти две суммы в наш калькулятор выше — вы сразу получите <strong class="text-white">полную цену авто под ключ во Владивостоке</strong> со всеми расходами.</span>
+            </li>
+          </ol>
+        </div>
+
+        <div class="mt-8 pt-5 border-t border-brand-cardBorder text-sm sm:text-base text-brand-textMuted font-medium">
+          * В автоматический расчёт уже заложены: фрахт 120 000 ¥, услуги таможенного брокера, СБКТС, ПРР (60 000 ₽) и фиксированная комиссия 30 000 ₽.
+        </div>
+      </div>
+
+      <div class="bg-brand-card/80 backdrop-blur-md border border-brand-cardBorder rounded-3xl p-6 sm:p-10 flex flex-col justify-between shadow-xl relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1920&auto=format&fit=crop')] bg-cover bg-center opacity-25 -z-10"></div>
+        <div class="absolute inset-0 bg-[#0b0d10]/85 -z-10"></div>
+
+        <div>
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-12 h-12 rounded-2xl bg-brand-brightOrange/15 border border-brand-brightOrange/40 flex items-center justify-center text-brand-brightOrange font-bold text-xl shrink-0">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <h3 class="text-2xl sm:text-3xl font-black text-white">Условия заказа и гарантия оплаты</h3>
+          </div>
+
+          <div class="space-y-5">
+            <div class="bg-brand-bg/95 border border-brand-cardBorder p-5 rounded-2xl">
+              <h4 class="font-black text-white mb-2 flex items-center gap-2.5 text-base sm:text-lg uppercase">
+                <i class="fa-solid fa-rotate-left text-brand-brightOrange"></i> 100% Возвратный аванс по договору
+              </h4>
+              <p class="text-sm sm:text-base text-brand-textMuted leading-relaxed">
+                Работаем строго по официальному договору. Если мы не смогли подобрать нужный вам вариант или вы передумали до покупки автомобиля на аукционе — <strong class="text-white">аванс возвращается в полном объёме (100%) без удержаний</strong>.
+              </p>
+            </div>
+
+            <div class="bg-brand-bg/95 border border-brand-cardBorder p-5 rounded-2xl space-y-3">
+              <h4 class="font-black text-white mb-2 flex items-center gap-2.5 text-base sm:text-lg uppercase">
+                <i class="fa-solid fa-wallet text-brand-brightOrange"></i> Прозрачная схема из 3 платежей
+              </h4>
+              <ul class="text-sm sm:text-base text-brand-textMuted space-y-2.5 leading-relaxed">
+                <li class="flex items-start gap-2.5">
+                  <span class="text-brand-brightOrange font-bold">•</span>
+                  <span><strong class="text-white">1. Инвойс в Японию (Самостоятельно):</strong> Вы оплачиваете стоимость авто на аукционе и фрахт напрямую в Японию через банк по официальному инвойсу.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="text-brand-brightOrange font-bold">•</span>
+                  <span><strong class="text-white">2. Таможенная пошлина (Напрямую):</strong> Оплачивается вами самостоятельно по квитанции напрямую в таможенные органы РФ.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="text-brand-brightOrange font-bold">•</span>
+                  <span><strong class="text-white">3. Брокер + Комиссия (Оплата нам):</strong> Услуги таможенного брокера (СБКТС, лаборатория, ПРР — 60 000 ₽) мы оплачиваем сами, поэтому вы переводите эту сумму вместе с нашей комиссией (30 000 ₽) нам.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 pt-5 border-t border-brand-cardBorder flex flex-wrap items-center justify-between gap-2 text-base">
+          <span class="text-brand-textMuted font-medium">Нужна консультация или расчёт?</span>
+          <a href="https://t.me/AvtoDeshevleVL" target="_blank" class="text-brand-brightOrange font-black hover:underline">
+            Написать в Telegram →
+          </a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- CATALOG SECTION -->
+    <section id="catalog" class="py-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+        <div>
+          <h2 class="text-3xl sm:text-4xl font-black text-white">Примеры доставленных авто</h2>
+          <p class="text-base sm:text-lg text-brand-textMuted mt-2">Реальные автомобили с итоговыми ценами под ключ во Владивостоке</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="catalogGrid"></div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="contacts" class="bg-brand-card/85 backdrop-blur-md border-t border-brand-cardBorder mt-20 py-14 relative overflow-hidden">
+    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=1920&auto=format&fit=crop')] bg-cover bg-center opacity-25 -z-10"></div>
+    <div class="absolute inset-0 bg-[#07090b]/90 -z-10"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div>
+          <span class="text-2xl sm:text-3xl font-black text-white tracking-wider">АВТОДЕШЕВЛЕ</span>
+          <p class="text-brand-textMuted text-base max-w-xl mt-3 leading-relaxed">
+            Прямой привоз автомобилей с аукционов Японии во Владивосток. Фиксированная комиссия 30 000 ₽, честный договор с возвратным авансом и полное сопровождение.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-3 lg:justify-end">
+          <a href="mailto:Avto-Deshevle.2025@yandex.ru"
+             class="h-12 bg-brand-bg hover:bg-brand-cardHover text-white border border-brand-cardBorder font-bold px-5 rounded-xl flex items-center gap-2.5 whitespace-nowrap transition-all">
+            <i class="fa-solid fa-envelope text-brand-brightOrange text-lg"></i> Avto-Deshevle.2025@yandex.ru
+          </a>
+          <a href="https://t.me/AvtoDeshevleVL" target="_blank" rel="noopener noreferrer"
+             class="h-12 bg-[#0088cc] hover:bg-[#0088cc]/90 text-white font-bold px-5 rounded-xl flex items-center gap-2.5 whitespace-nowrap transition-all">
+            <i class="fa-brands fa-telegram text-xl"></i> Telegram
+          </a>
+          <a href="https://wa.me/79143275734" target="_blank" rel="noopener noreferrer"
+             class="h-12 bg-[#25D366] hover:bg-[#25D366]/90 text-white font-bold px-5 rounded-xl flex items-center gap-2.5 whitespace-nowrap transition-all">
+            <i class="fa-brands fa-whatsapp text-xl"></i> +7 (914) 327-57-34
+          </a>
+          <a href="#" onclick="alert('Мессенджер MAX: АвтоДешевле (+7 914 327-57-34)'); return false;"
+             class="h-12 bg-brand-brightOrange hover:bg-brand-darkOrange text-white font-bold px-5 rounded-xl flex items-center gap-2.5 whitespace-nowrap transition-all">
+            <i class="fa-solid fa-comments text-lg"></i> MAX
+          </a>
+        </div>
+      </div>
+
+      <div class="bg-brand-bg/95 border border-brand-cardBorder rounded-2xl p-6 text-xs sm:text-sm text-brand-textMuted space-y-2 leading-relaxed">
+        <div class="font-bold text-white text-sm sm:text-base mb-1">
+          Политика конфиденциальности и обработка персональных данных (ФЗ-152)
+        </div>
+        <p>
+          Сервис «АвтоДешевле» соблюдает требования Федерального закона РФ № 152-ФЗ «О персональных данных». Используя сайт, вы даёте согласие на обработку файлов cookie и технических данных для корректной работы калькулятора и аналитики. Все контактные данные, передаваемые вами через мессенджеры или электронную почту <strong class="text-white">Avto-Deshevle.2025@yandex.ru</strong>, используются исключительно для расчёта стоимости, подбора и таможенного оформления автомобиля и не передаются третьим лицам без вашего согласия.
+        </p>
+        <div class="pt-2">
+          <button onclick="openPolicyModal()" class="text-brand-brightOrange font-bold underline hover:text-white transition-colors">
+            Открыть полный текст Политики конфиденциальности и обработки персональных данных →
+          </button>
+        </div>
+      </div>
+
+      <div class="pt-6 border-t border-brand-cardBorder flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-brand-textMuted">
+        <span>© 2026 АвтоДешевле. Все права защищены.</span>
+        <a href="#" onclick="openPolicyModal(); return false;" class="hover:text-brand-brightOrange underline font-semibold transition-colors">
+          Политика конфиденциальности и обработка персональных данных
+        </a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- DETAIL & GALLERY MODAL -->
+  <div id="detailsModal" class="fixed inset-0 z-50 bg-black/90 hidden items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div class="bg-brand-card border border-brand-cardBorder rounded-3xl max-w-4xl w-full max-h-[90vh] flex flex-col overflow-hidden shadow-2xl relative">
+      
+      <div class="p-6 border-b border-brand-cardBorder flex items-center justify-between gap-4">
+        <div>
+          <h3 id="modalTitle" class="text-2xl font-black text-white">Название авто</h3>
+          <p class="text-xs sm:text-sm text-brand-textMuted mt-1">Нажмите на любое фото для полноэкранного просмотра</p>
+        </div>
+        <button onclick="closeDetailsModal()" class="w-10 h-10 rounded-full bg-brand-bg hover:bg-brand-brightOrange text-white font-bold flex items-center justify-center transition-all border border-brand-cardBorder">
+          ✕
+        </button>
+      </div>
+
+      <div class="p-6 overflow-y-auto custom-scrollbar space-y-6">
+        <div class="bg-brand-brightOrange/15 border border-brand-brightOrange/40 rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <span class="text-base font-bold text-white">Итоговая стоимость под ключ во Владивостоке:</span>
+          <span id="modalPrice" class="text-3xl sm:text-4xl font-black text-brand-brightOrange">0 ₽</span>
+        </div>
+
+        <div>
+          <h4 class="text-sm font-bold uppercase tracking-wider text-brand-textMuted mb-3">Характеристики автомобиля:</h4>
+          <div id="modalSpecsGrid" class="grid grid-cols-2 sm:grid-cols-3 gap-3"></div>
+        </div>
+
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <h4 class="text-sm font-bold uppercase tracking-wider text-brand-textMuted">Фотографии с аукциона / осмотра:</h4>
+            <span id="modalBadge" class="text-sm font-bold text-brand-brightOrange">0 фото</span>
+          </div>
+          <div id="modalGalleryGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3"></div>
+        </div>
+      </div>
+
+      <div class="p-4 border-t border-brand-cardBorder bg-brand-bg flex flex-wrap gap-3 justify-between items-center">
+        <span class="text-xs sm:text-sm text-brand-textMuted font-semibold">Почта: Avto-Deshevle.2025@yandex.ru</span>
+        <div class="flex flex-wrap gap-2">
+          <a href="https://t.me/AvtoDeshevleVL" target="_blank" class="bg-[#0088cc] hover:bg-[#0088cc]/80 text-white font-bold px-4 py-2 rounded-xl text-xs sm:text-sm flex items-center gap-1.5">
+            <i class="fa-brands fa-telegram"></i> Telegram
+          </a>
+          <a href="https://wa.me/79143275734" target="_blank" class="bg-[#25D366] hover:bg-[#25D366]/80 text-white font-bold px-4 py-2 rounded-xl text-xs sm:text-sm flex items-center gap-1.5">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="fixed inset-0 z-50 bg-black/95 hidden flex-col justify-between p-4 sm:p-6 select-none">
+    <div class="flex items-center justify-between text-white z-10">
+      <span id="lightboxCounter" class="text-sm font-bold bg-white/10 px-4 py-2 rounded-full backdrop-blur-md">
+        Фото 1 из 1
+      </span>
+      <button onclick="closeLightbox()" class="w-12 h-12 rounded-full bg-white/10 hover:bg-brand-brightOrange text-white text-2xl font-bold flex items-center justify-center transition-all">
+        ✕
+      </button>
+    </div>
+
+    <div class="relative flex-1 flex items-center justify-center my-4 overflow-hidden">
+      <button onclick="prevImage(event)" class="absolute left-2 sm:left-6 z-10 w-12 h-12 rounded-full bg-black/60 hover:bg-brand-brightOrange text-white text-2xl flex items-center justify-center transition-all border border-white/15">
+        ❮
+      </button>
+      <img id="lightboxImg" src="" alt="Car Image" class="max-h-full max-w-full object-contain rounded-xl shadow-2xl">
+      <button onclick="nextImage(event)" class="absolute right-2 sm:right-6 z-10 w-12 h-12 rounded-full bg-black/60 hover:bg-brand-brightOrange text-white text-2xl flex items-center justify-center transition-all border border-white/15">
+        ❯
+      </button>
+    </div>
+
+    <div class="text-center text-brand-textMuted text-xs sm:text-sm font-medium z-10">
+      Используйте стрелки на экране или клавиши ← → на клавиатуре. Esc — закрыть.
+    </div>
+  </div>
+
+  <!-- COOKIE BANNER -->
+  <div id="cookieBanner" class="fixed bottom-4 left-4 right-4 md:left-auto md:right-6 md:max-w-lg z-50 bg-brand-card/95 backdrop-blur-md border border-brand-cardBorder rounded-2xl p-5 shadow-2xl flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm">
+    <div class="text-brand-textMuted leading-relaxed">
+      Мы используем файлы cookie для корректной работы сайта. Продолжая использование сайта, вы соглашаетесь с 
+      <a href="#" onclick="openPolicyModal(); return false;" class="text-brand-brightOrange font-bold underline">Политикой конфиденциальности и обработкой персональных данных</a>.
+    </div>
+    <button onclick="acceptCookies()" class="bg-brand-brightOrange hover:bg-brand-darkOrange text-white font-bold px-5 py-2.5 rounded-xl shrink-0 transition-colors">
+      Согласен
+    </button>
+  </div>
+
+  <!-- PRIVACY POLICY MODAL -->
+  <div id="policyModal" class="fixed inset-0 z-50 bg-black/90 hidden items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div class="bg-brand-card border border-brand-cardBorder rounded-3xl max-w-3xl w-full max-h-[85vh] flex flex-col overflow-hidden shadow-2xl relative">
+      <div class="p-6 border-b border-brand-cardBorder flex items-center justify-between gap-4">
+        <h3 class="text-lg sm:text-xl font-black text-white">Политика конфиденциальности и обработка персональных данных</h3>
+        <button onclick="closePolicyModal()" class="w-9 h-9 rounded-full bg-brand-bg text-white font-bold flex items-center justify-center hover:bg-brand-brightOrange transition-colors shrink-0">
+          ✕
+        </button>
+      </div>
+
+      <div class="p-6 overflow-y-auto custom-scrollbar text-sm sm:text-base text-brand-textMuted space-y-4 leading-relaxed">
+        <p><strong class="text-white">1. Общие положения</strong><br>
+        Настоящая Политика конфиденциальности и обработки персональных данных составлена в соответствии с требованиями Федерального закона Российской Федерации от 27.07.2006 № 152-ФЗ «О персональных данных» и определяет порядок обработки и защиты персональной информации пользователей сайта «АвтоДешевле» (далее — Оператор).</p>
+
+        <p><strong class="text-white">2. Состав обрабатываемых данных</strong><br>
+        • Технические данные, автоматически передаваемые браузером: файлы cookie, IP-адрес, параметры браузера и операционной системы, время посещения.<br>
+        • Контактная информация, добровольно предоставляемая клиентом при обращении через мессенджеры (Telegram, WhatsApp, MAX) или по электронной почте: имя, номер телефона, адрес электронной почты, паспортные и ИНН данные (исключительно при заключении официального договора на привоз и таможенное оформление автомобиля).</p>
+
+        <p><strong class="text-white">3. Цели обработки персональных данных</strong><br>
+        • Расчёт стоимости приобретения, доставки и таможенной очистки автомобилей из Японии;<br>
+        • Заключение и исполнение договора на подбор, покупку, доставку и оформление транспортного средства (СБКТС, ЭПТС, таможенный брокер);<br>
+        • Оперативная связь с клиентом для предоставления отчётов с аукционов.</p>
+
+        <p><strong class="text-white">4. Порядок хранения и защиты данных</strong><br>
+        Оператор принимает все необходимые организационные и технические меры для защиты персональных данных от неправомерного доступа. Персональные данные граждан РФ хранятся исключительно на территории Российской Федерации и не передаются третьим лицам, за исключением случаев прямого исполнения договора (таможенные органы РФ, испытательные лаборатории СБКТС, банки при проведении инвойса).</p>
+
+        <p><strong class="text-white">5. Использование файлов Cookie</strong><br>
+        Файлы cookie используются для сохранения пользовательских расчётов и корректного функционирования интерфейса сайта. Пользователь может в любой момент отключить сохранение файлов cookie в настройках своего браузера.</p>
+
+        <p><strong class="text-white">6. Контактные данные для обращений и отзыва согласия</strong><br>
+        Субъект персональных данных вправе в любой момент отозвать согласие на обработку персональных данных, направив письменное уведомление на электронную почту Оператора: <a href="mailto:Avto-Deshevle.2025@yandex.ru" class="text-brand-brightOrange font-bold underline">Avto-Deshevle.2025@yandex.ru</a> или по телефону <strong class="text-white">+7 (914) 327-57-34</strong>.</p>
+      </div>
+
+      <div class="p-4 border-t border-brand-cardBorder text-center">
+        <button onclick="closePolicyModal()" class="bg-brand-brightOrange hover:bg-brand-darkOrange text-white font-bold px-8 py-2.5 rounded-xl text-sm">
+          Закрыть
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS LOGIC -->
+  <script>
+    const carsData = [
+      {
+        title: "Mercedes-Benz C-Class Coupe",
+        badge: "9 фото",
+        price: "1 450 000 ₽",
+        images: [
+          "https://i.postimg.cc/SK0SksM4/tmp8E34-tmp.jpg",
+          "https://i.postimg.cc/RZxHNPcK/tmp8E19-tmp.jpg",
+          "https://i.postimg.cc/tg0qpTVc/tmp8E1A-tmp.png",
+          "https://i.postimg.cc/0NgkPQws/tmp8E35-tmp.jpg",
+          "https://i.postimg.cc/jjVxt570/tmp8E3C-tmp.jpg",
+          "https://i.postimg.cc/bvXypJ2K/tmp8E50-tmp.jpg",
+          "https://i.postimg.cc/TP8dfwWB/tmp8E69-tmp.jpg",
+          "https://i.postimg.cc/rp6VMmtP/tmp8E6F-tmp.jpg",
+          "https://i.postimg.cc/SK0Skszt/tmp8EB7-tmp.jpg"
+        ],
+        specs: ["Год: 2018", "Объем: 1.6л", "Пробег: 81 000 км", "Привод: Задний", "Оценка: 4.5"]
+      },
+      {
+        title: "Toyota C-HR",
+        badge: "6 фото",
+        price: "1 650 000 ₽",
+        images: [
+          "https://i.postimg.cc/yNP8jKDB/6858c215-2e60-4284-aaaa-6a32c5ce5a21.jpg",
+          "https://i.postimg.cc/s2cgmzvq/39309a40-a3e1-4c39-b43e-1c1fc32bb0b8.jpg",
+          "https://i.postimg.cc/8CHz4Gj2/404cf671-3c67-4e5a-809f-702954df71d2.jpg",
+          "https://i.postimg.cc/zfjG7Ny1/ae11f8d0-ccf1-4fef-8b59-652c1c98ab1f.jpg",
+          "https://i.postimg.cc/FKZHpv7w/b2257f0f-ba38-4a36-a44d-a4e38ad816f7.jpg",
+          "https://i.postimg.cc/g0D2spx9/eddd7117-a385-4367-a083-84672389216f.jpg"
+        ],
+        specs: ["Год: 2018-12", "Объем: 1.2л", "Пробег: 57 000 км", "Привод: 4WD", "Оценка: 4.5"]
+      },
+      {
+        title: "Suzuki Jimny",
+        badge: "5 фото",
+        price: "1 150 000 ₽",
+        images: [
+          "https://i.postimg.cc/gcqrkvzz/tmp4ABE-tmp.jpg",
+          "https://i.postimg.cc/66LT5dW6/tmp4ACA-tmp.jpg",
+          "https://i.postimg.cc/zDS3XnzB/tmp4ACB-tmp.jpg",
+          "https://i.postimg.cc/gcqrkvzG/tmp4ADB-tmp.jpg",
+          "https://i.postimg.cc/qqXNPKR3/tmp4ADD-tmp.jpg"
+        ],
+        specs: ["Год: 2019-09", "Объем: 658 CC", "Пробег: 53 000 км", "Привод: Part-time 4WD"]
+      },
+      {
+        title: "Honda Vezel",
+        badge: "11 фото",
+        price: "2 500 000 ₽",
+        images: [
+          "https://i.postimg.cc/D07Z8qxQ/tmp5E9A-tmp.jpg",
+          "https://i.postimg.cc/L5mXnzxt/tmp5E89-tmp.jpg",
+          "https://i.postimg.cc/j2R5LzM4/tmp5E9B-tmp.jpg",
+          "https://i.postimg.cc/6qB3ydML/tmp5EAD-tmp.jpg",
+          "https://i.postimg.cc/gjGJnvgD/tmp5EAE-tmp.jpg",
+          "https://i.postimg.cc/yx7dkFLn/tmp5EBC-tmp.jpg",
+          "https://i.postimg.cc/rsqmKSfh/tmp5EBE-tmp.jpg",
+          "https://i.postimg.cc/MHzTvy99/tmp5ECE-tmp.jpg",
+          "https://i.postimg.cc/5yf06ws7/tmp5FA9-tmp.jpg",
+          "https://i.postimg.cc/BbJ6Xxm7/tmp5FAB-tmp.jpg",
+          "https://i.postimg.cc/brqJsQm5/tmp5FB9-tmp.png"
+        ],
+        specs: ["Год: 2022-11", "Объем: 1.5л", "Пробег: 13 476 км", "Привод: 4WD", "Оценка: 4.5"]
+      },
+      {
+        title: "Suzuki Ignis",
+        badge: "27 фото",
+        price: "750 000 ₽",
+        images: [
+          "https://i.postimg.cc/Jnpw5Z15/0c340ee3-2bfa-4483-80db-643d4d0e4a83.jpg",
+          "https://i.postimg.cc/hjDWmpq0/13582cc9-f69f-4952-949d-654b47510fbd.jpg",
+          "https://i.postimg.cc/zBxmFKJk/2c93d7e2-880e-4404-86d5-379997de4aed.jpg",
+          "https://i.postimg.cc/DZxVPL2g/2ee0ec6d-377a-4f4e-bd1a-66098f74fbfa.jpg",
+          "https://i.postimg.cc/Hx6G9XpB/3bcb45f1-3678-4997-8f0d-b8e8c4f30531.jpg",
+          "https://i.postimg.cc/Kz0XDBZp/46ab38e8-2b83-42f6-a100-b2dce12a4f5c.jpg",
+          "https://i.postimg.cc/Y9dczYp8/4c7d30f4-28c7-4914-9983-4f43ab4c2847.jpg",
+          "https://i.postimg.cc/1tvxrw9v/5dc0bd97-1ea7-467a-8d35-509db2228fad.jpg",
+          "https://i.postimg.cc/vB0RtfQP/61f9ec9c-0cf5-47ab-a913-2a043f47332d.jpg",
+          "https://i.postimg.cc/504dznMS/661090d9-c071-4b2b-85f5-dbfe912d8f77.jpg",
+          "https://i.postimg.cc/rmf6Nx8H/749b09b3-493c-4a8f-9f35-6292774baf70.jpg",
+          "https://i.postimg.cc/JnrVXPWx/83591996-271b-44aa-9d19-1feadd3f2978.jpg",
+          "https://i.postimg.cc/260p7hzX/98c60ec3-b404-4ec3-a36a-a9efb3928b7d.jpg",
+          "https://i.postimg.cc/d15Mjrqx/99b1adaa-734c-4356-ad18-97f7b05bb3ab.jpg",
+          "https://i.postimg.cc/MT9kmVWP/9c62bf61-c760-4b2e-ac5e-f3e389670831.jpg",
+          "https://i.postimg.cc/85pQvtVH/a7a02f28-1f46-49d8-b169-e082812c7109.jpg",
+          "https://i.postimg.cc/HxYDMBC3/ba2098e7-b433-4104-a6e4-f6151d49c50b.jpg",
+          "https://i.postimg.cc/MT62Bd8d/badf34d9-a819-4b4a-8b64-c34c45454641.jpg",
+          "https://i.postimg.cc/PxXsD2kS/c29cb0c2-e892-4508-832b-2182b785032f.jpg",
+          "https://i.postimg.cc/ZRbtNVhf/c819f7ba-50d5-42b8-98d6-ed18c96f67b0.jpg",
+          "https://i.postimg.cc/76Kvn0xS/cd01f42f-c68e-496f-be07-d313077230ed.jpg",
+          "https://i.postimg.cc/4dfkcBTL/d3f40865-e715-4c37-9ce0-ff1f6d5b6cd5.jpg",
+          "https://i.postimg.cc/fL84fmwx/e491ed9a-a2cf-4e4a-9228-366adb8daa66.jpg",
+          "https://i.postimg.cc/k4TrvKnQ/eb63bb93-6898-4ee1-87ee-09ac3380f970.jpg",
+          "https://i.postimg.cc/1tvxrw90/f2c5ac21-edbf-4c83-a1fa-4532a2761e53.jpg",
+          "https://i.postimg.cc/1tvxrw9c/f6fedfe4-d3ad-411c-ba0d-a640a0e2f56b.jpg",
+          "https://i.postimg.cc/ZRwkxpTH/fcfb5fea-820d-4a36-90fd-f1262a0a0ecd.png"
+        ],
+        specs: ["Год: 2016-01", "Объем: 1.2л", "Пробег: 114 000 км", "Привод: Full-time 4WD", "Оценка: 3.5"]
+      },
+      {
+        title: "Volkswagen Tiguan",
+        badge: "24 фото",
+        price: "1 050 000 ₽",
+        images: [
+          "https://i.postimg.cc/PxpcYcRp/tmp-B3F5-tmp.jpg",
+          "https://i.postimg.cc/0QM3D3Br/tmp-B2E3-tmp.jpg",
+          "https://i.postimg.cc/PxpcYcRv/tmp-B3FC-tmp.jpg",
+          "https://i.postimg.cc/pTh7z76n/tmp-B3FE-tmp.jpg",
+          "https://i.postimg.cc/SKt3XqDK/tmp-B402-tmp.jpg",
+          "https://i.postimg.cc/bvFWG83J/tmp-B414-tmp.jpg",
+          "https://i.postimg.cc/XJGhdhzb/tmp-B426-tmp.jpg",
+          "https://i.postimg.cc/HxcKXKhH/tmp-B427-tmp.png",
+          "https://i.postimg.cc/qRhYyY53/tmp-B65C-tmp.jpg",
+          "https://i.postimg.cc/LXY7L7bL/tmp-B65D-tmp.jpg",
+          "https://i.postimg.cc/Y9GVYVs1/tmp-B65E-tmp.jpg",
+          "https://i.postimg.cc/MTM4V4Fw/tmp-B660-tmp.jpg",
+          "https://i.postimg.cc/PxpcYcRT/tmp-B661-tmp.jpg",
+          "https://i.postimg.cc/bJDMkMBy/tmp-B681-tmp.jpg",
+          "https://i.postimg.cc/Ss25C5vN/tmp-B694-tmp.jpg",
+          "https://i.postimg.cc/FRdq3qBS/tmp-B6AC-tmp.jpg",
+          "https://i.postimg.cc/DZJDLDMr/tmp-B77E-tmp.jpg",
+          "https://i.postimg.cc/k46ZKZp4/tmp-B785-tmp.jpg",
+          "https://i.postimg.cc/hjzwTw5t/tmp-B786-tmp.jpg",
+          "https://i.postimg.cc/HxcKXKhn/tmp-B787-tmp.jpg",
+          "https://i.postimg.cc/DZJDLDMS/tmp-B788-tmp.jpg",
+          "https://i.postimg.cc/mDzqCq5t/tmp-B789-tmp.jpg",
+          "https://i.postimg.cc/50YGLGRW/tmp-B78A-tmp.jpg",
+          "https://i.postimg.cc/k46ZKZpd/tmp-B78E-tmp.jpg"
+        ],
+        specs: ["Год: 2015-04", "Объем: 1.4л (1389 CC)", "Пробег: 68 000 км", "Привод: FF (Передний)", "Оценка: 4"]
+      },
+      {
+        title: "BMW MINI Hatchback",
+        badge: "48 фото",
+        price: "700 000 ₽",
+        images: [
+          "https://i.postimg.cc/ZYLPjjzr/tmp33D0-tmp.jpg",
+          "https://i.postimg.cc/T2cjQQvn/tmp33CF-tmp.jpg",
+          "https://i.postimg.cc/c1c7TTGR/tmp33D1-tmp.jpg",
+          "https://i.postimg.cc/tRzdDDGd/tmp33D2-tmp.jpg",
+          "https://i.postimg.cc/ZKK8Q3JW/tmp33E3-tmp.jpg",
+          "https://i.postimg.cc/rFF1HWqd/tmp33E5-tmp.jpg",
+          "https://i.postimg.cc/RVV7YfvJ/tmp33E6-tmp.png",
+          "https://i.postimg.cc/8PPRYWTJ/tmp33EA-tmp.jpg",
+          "https://i.postimg.cc/WbbGyrsJ/tmp33EB-tmp.jpg",
+          "https://i.postimg.cc/VLLqhMzC/tmp33EC-tmp.jpg",
+          "https://i.postimg.cc/8PPRYWTy/tmp340C-tmp.jpg",
+          "https://i.postimg.cc/288QtvC9/tmp340F-tmp.jpg",
+          "https://i.postimg.cc/sDDYLS3k/tmp3410-tmp.jpg",
+          "https://i.postimg.cc/WbWGc34X/tmp3432-tmp.jpg",
+          "https://i.postimg.cc/tRzdDDGH/tmp3433-tmp.jpg",
+          "https://i.postimg.cc/zDkwppYN/tmp3455-tmp.jpg",
+          "https://i.postimg.cc/mZS3VVWR/tmp3456-tmp.jpg",
+          "https://i.postimg.cc/3rZj99QQ/tmp3457-tmp.jpg",
+          "https://i.postimg.cc/qBGcQQHp/tmp3479-tmp.jpg",
+          "https://i.postimg.cc/bYR0LLfy/tmp3496-tmp.jpg",
+          "https://i.postimg.cc/9XBP11HX/tmp3512-tmp.jpg",
+          "https://i.postimg.cc/sfJPKKCD/tmp3542-tmp.jpg",
+          "https://i.postimg.cc/59m5ppWj/tmp3581-tmp.jpg",
+          "https://i.postimg.cc/X77fPFn5/tmp35BA-tmp.jpg",
+          "https://i.postimg.cc/zXXCQWqW/tmp35BB-tmp.jpg",
+          "https://i.postimg.cc/022Y4m97/tmp35CC-tmp.jpg",
+          "https://i.postimg.cc/vHHrK9Gr/tmp35CD-tmp.jpg",
+          "https://i.postimg.cc/022Y4m9p/tmp35CE-tmp.jpg",
+          "https://i.postimg.cc/QxxQz5jg/tmp35D7-tmp.jpg",
+          "https://i.postimg.cc/GhhFfYbJ/tmp35D8-tmp.jpg",
+          "https://i.postimg.cc/PrrW7ZdQ/tmp35E0-tmp.jpg",
+          "https://i.postimg.cc/TYYVsmT9/tmp35E1-tmp.jpg",
+          "https://i.postimg.cc/hPPLYxKM/tmp35F3-tmp.jpg",
+          "https://i.postimg.cc/tCC3cP92/tmp35F4-tmp.jpg",
+          "https://i.postimg.cc/hPPLYxK2/tmp35F5-tmp.jpg",
+          "https://i.postimg.cc/59m5ppW0/tmp3608-tmp.jpg",
+          "https://i.postimg.cc/WbbGyrsW/tmp361A-tmp.jpg",
+          "https://i.postimg.cc/mZS3VVWk/tmp3679-tmp.jpg",
+          "https://i.postimg.cc/MKK7LRzF/tmp367C-tmp.jpg",
+          "https://i.postimg.cc/VsF944PJ/tmp3680-tmp.jpg",
+          "https://i.postimg.cc/VsF944PC/tmp3687-tmp.jpg",
+          "https://i.postimg.cc/CM4CJJp8/tmp3688-tmp.jpg",
+          "https://i.postimg.cc/jqh6vvYP/tmp3689-tmp.jpg",
+          "https://i.postimg.cc/HsswN5TK/tmp368A-tmp.jpg",
+          "https://i.postimg.cc/9FFdkTcK/tmp368B-tmp.jpg",
+          "https://i.postimg.cc/c44RzYdP/tmp368C-tmp.jpg",
+          "https://i.postimg.cc/9FFdkTcv/tmp368D-tmp.jpg",
+          "https://i.postimg.cc/CM4CJJpD/tmp7CE-tmp.jpg"
+        ],
+        specs: ["Год: 2015-07", "Объем: 1.2л (1200 CC)", "Пробег: 86 000 км", "Привод: 2WD", "Оценка: 4.5"]
+      }
+    ];
+
+    function calculateTotal() {
+      const jpyRate = 0.60;
+      const japanExpensesJpy = 120000;
+      const russiaExpensesRub = 60000;
+      const companyCommissionRub = 30000;
+
+      const auctionJpy = parseFloat(document.getElementById('auctionPrice').value) || 0;
+      const customsRub = parseFloat(document.getElementById('customsDuty').value) || 0;
+
+      const auctionRub = auctionJpy * jpyRate;
+      const japanExpensesRub = japanExpensesJpy * jpyRate;
+
+      const total = auctionRub + japanExpensesRub + russiaExpensesRub + companyCommissionRub + customsRub;
+
+      document.getElementById('auctionRub').innerText = Math.round(auctionRub).toLocaleString('ru-RU') + ' ₽';
+      document.getElementById('dutyResult').innerText = Math.round(customsRub).toLocaleString('ru-RU') + ' ₽';
+      document.getElementById('totalPrice').innerText = Math.round(total).toLocaleString('ru-RU') + ' ₽';
+    }
+
+    const catalogGrid = document.getElementById('catalogGrid');
+    carsData.forEach((car, carIdx) => {
+      const card = document.createElement('div');
+      card.className = 'bg-brand-card/85 backdrop-blur-md border border-brand-cardBorder rounded-3xl overflow-hidden flex flex-col group hover:border-brand-brightOrange/60 transition-all duration-300 shadow-xl';
+      card.innerHTML = `
+        <div class="relative h-64 cursor-pointer overflow-hidden" onclick="openDetailsModal(${carIdx})">
+          <img src="${car.images[0]}" alt="${car.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute bottom-3 right-3 bg-black/80 backdrop-blur-md border border-white/15 text-white text-xs font-bold px-3.5 py-1.5 rounded-xl">
+            📷 ${car.badge}
+          </div>
+        </div>
+        <div class="p-6 flex flex-col flex-1">
+          <h3 class="text-xl sm:text-2xl font-black text-white mb-2">${car.title}</h3>
+          
+          <div class="bg-brand-brightOrange/10 border border-brand-brightOrange/30 rounded-2xl px-4 py-3 mb-5 flex items-center justify-between">
+            <span class="text-xs font-bold uppercase text-brand-textMuted">Под ключ:</span>
+            <span class="text-2xl sm:text-3xl font-black text-brand-brightOrange">${car.price}</span>
+          </div>
+          
+          <div class="grid grid-cols-2 gap-2.5 mb-6">
+            ${car.specs.map(s => `<div class="bg-brand-bg/90 border border-brand-cardBorder text-white text-xs sm:text-sm font-semibold px-3 py-2 rounded-xl">${s}</div>`).join('')}
+          </div>
+
+          <button onclick="openDetailsModal(${carIdx})" 
+                  class="mt-auto bg-brand-brightOrange hover:bg-brand-darkOrange text-white font-black py-3.5 rounded-2xl text-base text-center transition-colors">
+            Смотреть все фото (${car.badge})
+          </button>
+        </div>
+      `;
+      catalogGrid.appendChild(card);
+    });
+
+    let currentCar = 0;
+    let currentImg = 0;
+
+    function openDetailsModal(carIdx) {
+      currentCar = carIdx;
+      const car = carsData[carIdx];
+
+      document.getElementById('modalTitle').innerText = car.title;
+      document.getElementById('modalPrice').innerText = car.price;
+      document.getElementById('modalBadge').innerText = car.badge;
+
+      const specsGrid = document.getElementById('modalSpecsGrid');
+      specsGrid.innerHTML = car.specs.map(s => `
+        <div class="bg-brand-bg/90 border border-brand-cardBorder rounded-xl p-3.5 text-center">
+          <span class="text-xs sm:text-sm font-bold text-white block">${s}</span>
+        </div>
+      `).join('');
+
+      const galleryGrid = document.getElementById('modalGalleryGrid');
+      galleryGrid.innerHTML = car.images.map((imgSrc, imgIdx) => `
+        <div class="relative h-28 sm:h-32 rounded-xl overflow-hidden cursor-pointer border border-brand-cardBorder hover:border-brand-brightOrange group transition-all"
+             onclick="openLightbox(${carIdx}, ${imgIdx})">
+          <img src="${imgSrc}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+        </div>
+      `).join('');
+
+      document.getElementById('detailsModal').classList.remove('hidden');
+      document.getElementById('detailsModal').classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeDetailsModal() {
+      document.getElementById('detailsModal').classList.add('hidden');
+      document.getElementById('detailsModal').classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    function openLightbox(carIdx, imgIdx) {
+      currentCar = carIdx;
+      currentImg = imgIdx;
+      updateLightbox();
+      document.getElementById('lightbox').classList.remove('hidden');
+      document.getElementById('lightbox').classList.add('flex');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.add('hidden');
+      document.getElementById('lightbox').classList.remove('flex');
+    }
+
+    function updateLightbox() {
+      const car = carsData[currentCar];
+      document.getElementById('lightboxImg').src = car.images[currentImg];
+      document.getElementById('lightboxCounter').innerText = `Фото ${currentImg + 1} из ${car.images.length}`;
+    }
+
+    function nextImage(e) {
+      if(e) e.stopPropagation();
+      const car = carsData[currentCar];
+      currentImg = (currentImg + 1) % car.images.length;
+      updateLightbox();
+    }
+
+    function prevImage(e) {
+      if(e) e.stopPropagation();
+      const car = carsData[currentCar];
+      currentImg = (currentImg - 1 + car.images.length) % car.images.length;
+      updateLightbox();
+    }
+
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+        menu.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+      } else {
+        menu.classList.add('hidden');
+        menu.classList.remove('flex');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function toggleContactDropdown() {
+      const dropdown = document.getElementById('contactDropdown');
+      const chevron = document.getElementById('contactChevron');
+      if (dropdown.classList.contains('hidden')) {
+        dropdown.classList.remove('hidden');
+        dropdown.classList.add('flex');
+        chevron.style.transform = 'rotate(180deg)';
+      } else {
+        dropdown.classList.add('hidden');
+        dropdown.classList.remove('flex');
+        chevron.style.transform = 'rotate(0deg)';
+      }
+    }
+
+    window.addEventListener('click', function(e) {
+      const btn = document.getElementById('contactBtn');
+      const dropdown = document.getElementById('contactDropdown');
+      const chevron = document.getElementById('contactChevron');
+      if (!btn.contains(e.target) && !dropdown.contains(e.target)) {
+        dropdown.classList.add('hidden');
+        dropdown.classList.remove('flex');
+        chevron.style.transform = 'rotate(0deg)';
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+      if (localStorage.getItem("cookiesAccepted") === "true") {
+        document.getElementById("cookieBanner").classList.add("hidden");
+      }
+    });
+
+    function acceptCookies() {
+      localStorage.setItem("cookiesAccepted", "true");
+      document.getElementById("cookieBanner").classList.add("hidden");
+    }
+
+    function openPolicyModal() {
+      document.getElementById("policyModal").classList.remove("hidden");
+      document.getElementById("policyModal").classList.add("flex");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closePolicyModal() {
+      document.getElementById("policyModal").classList.add("hidden");
+      document.getElementById("policyModal").classList.remove("flex");
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', (e) => {
+      const lb = document.getElementById('lightbox');
+      const modal = document.getElementById('detailsModal');
+      const policy = document.getElementById('policyModal');
+      const mobileMenu = document.getElementById('mobileMenu');
+      
+      if (!lb.classList.contains('hidden')) {
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') nextImage();
+        if (e.key === 'ArrowLeft') prevImage();
+      } else if (!modal.classList.contains('hidden')) {
+        if (e.key === 'Escape') closeDetailsModal();
+      } else if (!policy.classList.contains('hidden')) {
+        if (e.key === 'Escape') closePolicyModal();
+      } else if (!mobileMenu.classList.contains('hidden')) {
+        if (e.key === 'Escape') toggleMobileMenu();
+      }
+    });
+
+    calculateTotal();
+  </script>
+</body>
+</html>
