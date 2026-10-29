@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Калькулятор привоза авто — АвтоДешевле</title>
+  
+  <!-- Фавикон в виде вашего точного 6-лепесткового логотипа -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 100'%3E%3Crect width='120' height='100' rx='22' fill='%23ffffff'/%3E%3Cpath d='M 57.5 19.6 A 32 32 0 1 0 57.5 80.4 A 37 37 0 0 1 57.5 19.6 Z' fill='%231c1c1c'/%3E%3Cg transform='translate(76, 50)' fill='%23e85319'%3E%3Cpath d='M 4.1 -11.3 L 10.6 -29.1 A 31 31 0 0 1 29.1 -10.6 L 11.3 -4.1 A 12 12 0 0 0 4.1 -11.3 Z'/%3E%3Cpath d='M 4.1 -11.3 L 10.6 -29.1 A 31 31 0 0 1 29.1 -10.6 L 11.3 -4.1 A 12 12 0 0 0 4.1 -11.3 Z' transform='rotate(60)'/%3E%3Cpath d='M 4.1 -11.3 L 10.6 -29.1 A 31 31 0 0 1 29.1 -10.6 L 11.3 -4.1 A 12 12 0 0 0 4.1 -11.3 Z' transform='rotate(120)'/%3E%3Cpath d='M 4.1 -11.3 L 10.6 -29.1 A 31 31 0 0 1 29.1 -10.6 L 11.3 -4.1 A 12 12 0 0 0 4.1 -11.3 Z' transform='rotate(180)'/%3E%3Cpath d='M 4.1 -11.3 L 10.6 -29.1 A 31 31 0 0 1 29.1 -10.6 L 11.3 -4.1 A 12 12 0 0 0 4.1 -11.3 Z' transform='rotate(240)'/%3E%3Cpath d='M 4.1 -11.3 L 10.6 -29.1 A 31 31 0 0 1 29.1 -10.6 L 11.3 -4.1 A 12 12 0 0 0 4.1 -11.3 Z' transform='rotate(300)'/%3E%3C/g%3E%3C/svg%3E">
+
+  <style>
+    :root {
+      --bg-dark: #030508;
+      --card-bg: #14171f;
+      --card-border: #262b38;
+      --primary-orange: #ff5500;
+      --primary-hover: #cc4400;
+      --text-main: #f3f5f8;
+      --text-muted: #a0a8bd;
+      --green-total: #2ea043;
+      --input-bg: #0b0d10;
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      -webkit-text-size-adjust: 100%;
+      width: 100%;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 15% 20%, rgba(232, 83, 25, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 80%, rgba(0, 136, 204, 0.06) 0%, transparent 40%),
+        linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+      background-attachment: fixed;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 14px;
+      background-color: rgba(5, 7, 10, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--card-border);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+    }
+
+    @media (min-width: 768px) {
+      header {
+        padding: 14px 40px;
+      }
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      min-width: 0;
+    }
+
+    .logo-badge {
+      height: 38px;
+      padding: 0 10px;
+      background: #ffffff;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+
+    .logo-badge svg {
+      height: 26px;
+      width: auto;
+    }
+
+    .brand-titles {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .brand-titles .title-main {
+      font-size: 15px;
+      font-weight: 900;
+      color: #ffffff;
+      letter-spacing: 0.8px;
+      line-height: 1.1;
+      text-transform: uppercase;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .brand-titles .title-sub {
+      font-size: 8px;
+      font-weight: 700;
+      color: #e85319;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      margin-top: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    @media (min-width: 600px) {
+      .logo-badge {
+        height: 44px;
+        border-radius: 14px;
+      }
+      .logo-badge svg {
+        height: 30px;
+      }
+      .brand-titles .title-main {
+        font-size: 19px;
+      }
+      .brand-titles .title-sub {
+        font-size: 9px;
+      }
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .btn-back {
+      background: var(--card-bg);
+      color: #fff;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 10px;
+      font-size: 12px;
+      font-weight: 700;
+      border: 1px solid var(--card-border);
+      white-space: nowrap;
+    }
+
+    .btn-contact {
+      background-color: var(--primary-orange);
+      color: #fff;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 12px;
+      cursor: pointer;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .main-wrapper {
+      width: 100%;
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 12px 12px 40px 12px;
+    }
+
+    @media (min-width: 600px) {
+      .main-wrapper {
+        padding: 24px 16px 60px 16px;
+      }
+    }
+
+    .calc-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      width: 100%;
+    }
+
+    @media (min-width: 600px) {
+      .calc-card {
+        border-radius: 24px;
+        padding: 28px;
+      }
+    }
+
+    .calc-title {
+      font-size: 18px;
+      font-weight: 900;
+      margin: 0 0 4px 0;
+      color: #fff;
+    }
+
+    @media (min-width: 600px) {
+      .calc-title {
+        font-size: 24px;
+      }
+    }
+
+    .calc-subtitle {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin: 0 0 16px 0;
+      line-height: 1.4;
+    }
+
+    .drom-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      background: rgba(255, 85, 0, 0.14);
+      border: 1px solid rgba(255, 85, 0, 0.45);
+      color: var(--primary-orange);
+      text-decoration: none;
+      padding: 12px 14px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 18px;
+      transition: all 0.2s;
+      text-align: center;
+    }
+
+    .drom-btn:hover {
+      background: rgba(255, 85, 0, 0.24);
+      color: #fff;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      width: 100%;
+    }
+
+    @media (min-width: 600px) {
+      .form-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+    }
+
+    .full-width {
+      grid-column: 1 / -1;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      width: 100%;
+    }
+
+    .input-group label {
+      font-size: 10.5px;
+      color: var(--text-muted);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+
+    .input-wrapper {
+      display: flex;
+      align-items: center;
+      background: var(--input-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 0 12px;
+      width: 100%;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .input-wrapper:focus-within {
+      border-color: var(--primary-orange);
+      box-shadow: 0 0 0 2px rgba(255, 85, 0, 0.15);
+    }
+
+    .input-wrapper input, .input-wrapper select {
+      width: 100%;
+      background: transparent;
+      border: none;
+      color: #fff;
+      padding: 12px 0;
+      font-size: 15px;
+      font-weight: 700;
+      outline: none;
+    }
+
+    .input-wrapper span {
+      color: var(--text-muted);
+      font-weight: 700;
+      font-size: 14px;
+      padding-left: 6px;
+    }
+
+    .custom-dropdown {
+      position: relative;
+      background: var(--input-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      user-select: none;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .custom-dropdown-selected {
+      padding: 12px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .custom-dropdown-selected::after {
+      content: "▼";
+      font-size: 9px;
+      color: var(--text-muted);
+    }
+
+    .custom-dropdown-list {
+      position: absolute;
+      top: calc(100% + 4px);
+      left: 0;
+      right: 0;
+      background: #10131a;
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      max-height: 200px;
+      overflow-y: auto;
+      display: none;
+      z-index: 60;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.85);
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .custom-dropdown-list::-webkit-scrollbar {
+      display: none;
+    }
+
+    .custom-dropdown.open .custom-dropdown-list {
+      display: block;
+    }
+
+    .custom-dropdown-item {
+      padding: 10px 14px;
+      font-size: 14px;
+      color: #c9d1d9;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .custom-dropdown-item:hover {
+      background: var(--primary-orange);
+      color: #fff;
+    }
+
+    .date-select-group {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      gap: 8px;
+      width: 100%;
+    }
+
+    .options-row {
+      background: var(--input-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+    }
+
+    .rates-mini {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      width: 100%;
+    }
+
+    .rate-field {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .rate-field label {
+      font-size: 9.5px;
+      color: var(--text-muted);
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .rate-field input {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      color: #fff;
+      padding: 8px 4px;
+      border-radius: 8px;
+      font-size: 12.5px;
+      text-align: center;
+      font-weight: 700;
+      outline: none;
+      width: 100%;
+    }
+
+    .actions-grid {
+      display: flex;
+      gap: 10px;
+      width: 100%;
+    }
+
+    .btn-main {
+      flex: 1.6;
+      background: linear-gradient(135deg, #e85319, #ff5500);
+      color: #fff;
+      border: none;
+      padding: 14px;
+      border-radius: 12px;
+      font-weight: 800;
+      font-size: 14px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(255, 85, 0, 0.3);
+      text-align: center;
+    }
+
+    .btn-sec {
+      flex: 1;
+      background: #212a38;
+      color: #fff;
+      border: 1px solid #303b4d;
+      padding: 14px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .result-box {
+      background: var(--input-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 14px;
+      width: 100%;
+    }
+
+    @media (min-width: 600px) {
+      .result-box {
+        padding: 18px;
+      }
+    }
+
+    .total-display {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: 15px;
+      font-weight: 900;
+      color: var(--green-total);
+      margin-bottom: 14px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    @media (min-width: 480px) {
+      .total-display {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 18px;
+      }
+    }
+
+    .total-display .usd-sub {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: normal;
+    }
+
+    .details-list {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      font-size: 12px;
+      width: 100%;
+    }
+
+    .detail-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      color: #c9d1d9;
+      gap: 8px;
+    }
+
+    .detail-item span:first-child {
+      line-height: 1.35;
+    }
+
+    .detail-item span:last-child {
+      font-weight: 700;
+      color: #fff;
+      text-align: right;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .info-section {
+      background: var(--input-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 14px;
+      width: 100%;
+    }
+
+    @media (min-width: 600px) {
+      .info-section {
+        padding: 18px;
+      }
+    }
+
+    .info-section h3 {
+      font-size: 13px;
+      font-weight: 800;
+      color: #fff;
+      margin: 0 0 8px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+
+    .info-section p, .info-section li {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin: 0 0 6px 0;
+    }
+
+    .info-section ul {
+      margin: 0 0 12px 0;
+      padding-left: 16px;
+    }
+
+    .footer-note {
+      margin-top: 14px;
+      font-size: 10.5px;
+      color: var(--text-muted);
+      text-align: center;
+      line-height: 1.4;
+      padding: 0 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="brand">
+      <div class="logo-badge">
+        <svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 57.5 19.6 A 32 32 0 1 0 57.5 80.4 A 37 37 0 0 1 57.5 19.6 Z" fill="#1c1c1c"/>
+          <g transform="translate(76, 50)" fill="#e85319">
+            <path d="M 4.1 -11.3 L 10.6 -29.1 A 31 31 0 0 1 29.1 -10.6 L 11.3 -4.1 A 12 12 0 0 0 4.1 -11.3 Z"/>
+            <path d="M 4.1 -11.3 L 10.6 -29.1 A 31 31 0 0 1 29.1 -10.6 L 11.3 -4.1 A 12 12 0 0 0 4.1 -11.3 Z" transform="rotate(60)"/>
+            <path d="M 4.1 -11.3 L 10.6 -29.1 A 31 31 0 0 1 29.1 -10.6 L 11.3 -4.1 A 12 12 0 0 0 4.1 -11.3 Z" transform="rotate(120)"/>
+            <path d="M 4.1 -11.3 L 10.6 -29.1 A 31 31 0 0 1 29.1 -10.6 L 11.3 -4.1 A 12 12 0 0 0 4.1 -11.3 Z" transform="rotate(180)"/>
+            <path d="M 4.1 -11.3 L 10.6 -29.1 A 31 31 0 0 1 29.1 -10.6 L 11.3 -4.1 A 12 12 0 0 0 4.1 -11.3 Z" transform="rotate(240)"/>
+            <path d="M 4.1 -11.3 L 10.6 -29.1 A 31 31 0 0 1 29.1 -10.6 L 11.3 -4.1 A 12 12 0 0 0 4.1 -11.3 Z" transform="rotate(300)"/>
+          </g>
+        </svg>
+      </div>
+      <div class="brand-titles">
+        <span class="title-main">АВТОДЕШЕВЛЕ</span>
+        <span class="title-sub">Экономим ваш бюджет: честная цена без посредников и переплат</span>
+      </div>
+    </a>
+
+    <div class="header-actions">
+      <a href="index.html" class="btn-back">← На сайт</a>
+      <a href="https://t.me/AvtoDeshevleVL" target="_blank" rel="noopener noreferrer" class="btn-contact">Связаться</a>
+    </div>
+  </header>
+
+  <div class="main-wrapper">
+    <div class="calc-card">
+      <h1 class="calc-title">Калькулятор привоза авто</h1>
+      <div class="calc-subtitle">Точный расчет стоимости во Владивостоке с учетом возраста и пошлин</div>
+
+      <a href="https://www.drom.ru/world/japan/" target="_blank" rel="noopener noreferrer" class="drom-btn">
+        📈 Статистика продаж и цены в Японии на Drom.ru ↗
+      </a>
+
+      <div class="form-grid">
+        <!-- Цена на аукционе -->
+        <div class="input-group">
+          <label for="aucPrice">Цена в Японии (JPY)</label>
+          <div class="input-wrapper">
+            <input type="number" id="aucPrice" value="850000" step="10000" min="10000" inputmode="numeric" oninput="calculateAll()">
+            <span>¥</span>
+          </div>
+        </div>
+
+        <!-- Месяц и год выпуска -->
+        <div class="input-group">
+          <label>Месяц и год выпуска (листается колесиком)</label>
+          <div class="date-select-group">
+            <div class="custom-dropdown" id="dropdownMonth">
+              <div class="custom-dropdown-selected" onclick="toggleDropdown('dropdownMonth')">Июнь</div>
+              <div class="custom-dropdown-list" id="listMonth">
+                <div class="custom-dropdown-item" onclick="selectMonth(1, 'Январь')">Январь</div>
+                <div class="custom-dropdown-item" onclick="selectMonth(2, 'Февраль')">Февраль</div>
+                <div class="custom-dropdown-item" onclick="selectMonth(3, 'Март')">Март</div>
+                <div class="custom-dropdown-item" onclick="selectMonth(4, 'Апрель')">Апрель</div>
+                <div class="custom-dropdown-item" onclick="selectMonth(5, 'Май')">Май</div>
+                <div class="custom-dropdown-item" onclick="selectMonth(6, 'Июнь')">Июнь</div>
+                <div class="custom-dropdown-item" onclick="selectMonth(7, 'Июль')">Июль</div>
+                <div class="custom-dropdown-item" onclick="selectMonth(8, 'Август')">Август</div>
+                <div class="custom-dropdown-item" onclick="selectMonth(9, 'Сентябрь')">Сентябрь</div>
+                <div class="custom-dropdown-item" onclick="selectMonth(10, 'Октябрь')">Октябрь</div>
+                <div class="custom-dropdown-item" onclick="selectMonth(11, 'Ноябрь')">Ноябрь</div>
+                <div class="custom-dropdown-item" onclick="selectMonth(12, 'Декабрь')">Декабрь</div>
+              </div>
+              <input type="hidden" id="carMonthVal" value="6">
+            </div>
+
+            <div class="custom-dropdown" id="dropdownYear">
+              <div class="custom-dropdown-selected" onclick="toggleDropdown('dropdownYear')">2022</div>
+              <div class="custom-dropdown-list" id="listYear"></div>
+              <input type="hidden" id="carYearVal" value="2022">
+            </div>
+          </div>
+        </div>
+
+        <!-- Объем двигателя -->
+        <div class="input-group">
+          <label for="engineCc">Объем (куб. см)</label>
+          <div class="input-wrapper">
+            <input type="number" id="engineCc" value="1500" step="100" min="660" max="6000" inputmode="numeric" oninput="calculateAll()">
+            <span>cc</span>
+          </div>
+        </div>
+
+        <!-- Мощность -->
+        <div class="input-group">
+          <label for="horsePower">Мощность (л.с.)</label>
+          <div class="input-wrapper">
+            <input type="number" id="horsePower" value="120" min="30" max="600" inputmode="numeric" oninput="calculateAll()">
+            <span>л.с.</span>
+          </div>
+        </div>
+
+        <!-- Оформление -->
+        <div class="input-group full-width">
+          <label for="targetClient">Тип таможенного оформления</label>
+          <div class="input-wrapper">
+            <select id="targetClient" onchange="calculateAll()" style="color-scheme: dark;">
+              <option value="phys">Физ. лицо (для личного пользования)</option>
+              <option value="jur">Юр. лицо / Коммерция</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Курсы валют -->
+        <div class="options-row full-width">
+          <div style="font-size: 10.5px; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Курсы валют и комиссия банка:</div>
+          <div class="rates-mini">
+            <div class="rate-field">
+              <label>USD (ЦБ)</label>
+              <input type="number" id="rateUsd" value="80.15" step="0.1" inputmode="decimal" onchange="calculateAll()">
+            </div>
+            <div class="rate-field">
+              <label>EUR (ЦБ)</label>
+              <input type="number" id="rateEur" value="93.26" step="0.1" inputmode="decimal" onchange="calculateAll()">
+            </div>
+            <div class="rate-field">
+              <label>100 JPY (ЦБ)</label>
+              <input type="number" id="rateJpy" value="53.62" step="0.1" inputmode="decimal" onchange="calculateAll()">
+            </div>
+          </div>
+          <div style="font-size: 10.5px; color: var(--text-muted); line-height: 1.35;">
+            * Расходы в Японии пересчитываются с учетом коммерческого курса банка (<b>комиссия банка / спред +10%</b> к курсу ЦБ). Таможенная пошлина считается строго по курсу ЦБ.
+          </div>
+        </div>
+
+        <!-- Кнопки действия -->
+        <div class="actions-grid full-width">
+          <button class="btn-main" onclick="calculateAll()">Рассчитать</button>
+          <button class="btn-sec" onclick="copyEstimate()">📋 Копировать</button>
+        </div>
+
+        <!-- Результат -->
+        <div class="result-box full-width">
+          <div class="total-display">
+            <span>ИТОГО ВО ВЛАДИВОСТОКЕ:</span>
+            <div><span id="totalRubText">0</span> ₽ <span class="usd-sub" id="totalUsdText">(0$)</span></div>
+          </div>
+
+          <div class="details-list">
+            <div class="detail-item"><span>Возраст авто:</span> <span id="carAgeText" style="color: var(--primary-orange);">—</span></div>
+            <div class="detail-item"><span>1. Аукционная цена:</span> <span id="rowAucJpy">0 JPY</span></div>
+            <div class="detail-item"><span>2. Япония + фрахт (фиксир.):</span> <span>150 000 JPY</span></div>
+            <div class="detail-item"><span>&nbsp;&nbsp;&nbsp;&nbsp;Итого по Японии (с комиссией банка / спредом +10%):</span> <span id="subJapanRub" style="color:var(--primary-orange);">0 ₽</span></div>
+            <div class="detail-item"><span>3. Таможенная пошлина (ЦБ):</span> <span id="rowDutyRub">0 ₽</span></div>
+            <div class="detail-item"><span>4. Утилизационный сбор:</span> <span id="rowUtilRub">0 ₽</span></div>
+            <div class="detail-item"><span>5. ПРР, СБКТС, брокер, СВХ:</span> <span>70 000 ₽</span></div>
+            <div class="detail-item"><span>6. Комиссия «АвтоДешевле»:</span> <span>30 000 ₽</span></div>
+          </div>
+        </div>
+
+        <!-- Инструкция и пояснение для клиентов -->
+        <div class="info-section full-width">
+          <h3>📖 Как пользоваться калькулятором</h3>
+          <ul>
+            <li><b>Цена в Японии (JPY):</b> Нажмите кнопку «Статистика продаж на Drom.ru» выше, посмотрите стоимость автомобиля в Японии в иенах и введите её в первое поле.</li>
+            <li><b>Месяц и год выпуска:</b> Выберите дату из документов (можно крутить колесиком мыши или пальцем) — калькулятор автоматически определит категорию авто («проходное» от 3 до 5 лет, новое или старше 5 лет).</li>
+            <li><b>Объем и мощность:</b> Укажите характеристики двигателя для точного расчета таможенной пошлины и утильсбора.</li>
+          </ul>
+          <h3>💡 Из чего складывается итоговая цена</h3>
+          <p>Итоговая стоимость во Владивостоке включает покупку авто на аукционе, фиксированные расходы по Японии и фрахт (150 000 JPY) с учетом комиссии банка (спреда +10%), официальную таможенную пошлину по курсу ЦБ, утильсбор, комплекс услуг в РФ (ПРР, СБКТС, брокер, СВХ — 70 000 ₽) и нашу фиксированную комиссию 30 000 ₽.</p>
+        </div>
+
+      </div>
+
+      <div class="footer-note" id="rateFooterText">
+        Загрузка курсов ЦБ РФ...
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const monthNames = [
+      'Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
+      'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'
+    ];
+
+    (function populateYears() {
+      const listYear = document.getElementById('listYear');
+      const currentYear = new Date().getFullYear();
+      for (let y = currentYear; y >= 1970; y--) {
+        const item = document.createElement('div');
+        item.className = 'custom-dropdown-item';
+        item.textContent = y;
+        item.onclick = () => selectYear(y, y);
+        listYear.appendChild(item);
+      }
+    })();
+
+    function toggleDropdown(id) {
+      const dropdown = document.getElementById(id);
+      document.querySelectorAll('.custom-dropdown').forEach(d => {
+        if (d !== dropdown) d.classList.remove('open');
+      });
+      dropdown.classList.toggle('open');
+    }
+
+    window.addEventListener('click', function(e) {
+      if (!e.target.closest('.custom-dropdown')) {
+        document.querySelectorAll('.custom-dropdown').forEach(d => d.classList.remove('open'));
+      }
+    });
+
+    function selectMonth(val, name) {
+      document.getElementById('carMonthVal').value = val;
+      document.querySelector('#dropdownMonth .custom-dropdown-selected').textContent = name;
+      document.getElementById('dropdownMonth').classList.remove('open');
+      calculateAll();
+    }
+
+    function selectYear(val, name) {
+      document.getElementById('carYearVal').value = val;
+      document.querySelector('#dropdownYear .custom-dropdown-selected').textContent = name;
+      document.getElementById('dropdownYear').classList.remove('open');
+      calculateAll();
+    }
+
+    document.getElementById('dropdownMonth').addEventListener('wheel', function(e) {
+      if (this.classList.contains('open')) return;
+      e.preventDefault();
+      let current = parseInt(document.getElementById('carMonthVal').value) || 6;
+      if (e.deltaY > 0 && current < 12) current++;
+      else if (e.deltaY < 0 && current > 1) current--;
+      selectMonth(current, monthNames[current - 1]);
+    }, { passive: false });
+
+    document.getElementById('dropdownYear').addEventListener('wheel', function(e) {
+      if (this.classList.contains('open')) return;
+      e.preventDefault();
+      const maxYear = new Date().getFullYear();
+      let current = parseInt(document.getElementById('carYearVal').value) || 2022;
+      if (e.deltaY > 0 && current > 1970) current--;
+      else if (e.deltaY < 0 && current < maxYear) current++;
+      selectYear(current, current);
+    }, { passive: false });
+
+    document.querySelectorAll('.custom-dropdown-list').forEach(list => {
+      list.addEventListener('wheel', function(e) {
+        e.stopPropagation();
+      });
+    });
+
+    function getCarAgeData() {
+      const carYear = parseInt(document.getElementById('carYearVal').value) || 2022;
+      const carMonth = parseInt(document.getElementById('carMonthVal').value) || 6;
+      
+      const now = new Date();
+      const currentYear = now.getFullYear();
+      const currentMonth = now.getMonth() + 1;
+
+      let diffMonths = (currentYear - carYear) * 12 + (currentMonth - carMonth);
+      if (diffMonths < 0) diffMonths = 0;
+
+      const exactYears = diffMonths / 12;
+
+      let category = 'under3';
+      if (exactYears >= 3 && exactYears < 5) {
+        category = '3to5';
+      } else if (exactYears >= 5 && exactYears < 7) {
+        category = '5to7';
+      } else if (exactYears >= 7) {
+        category = 'over7';
+      }
+
+      return { exactYears, category };
+    }
+
+    function calculateCustomsDutyEur(priceJpy, cc, ageCategory, eurRate, jpy100Rate) {
+      const priceRub = (priceJpy / 100) * jpy100Rate;
+      const priceEur = priceRub / eurRate;
+      let dutyEur = 0;
+
+      if (ageCategory === 'under3') {
+        let percent = 0.48;
+        let minPerCc = 3.5;
+        if (priceEur <= 8500) { percent = 0.54; minPerCc = 2.5; }
+        else if (priceEur <= 16700) { percent = 0.48; minPerCc = 3.5; }
+        else if (priceEur <= 42300) { percent = 0.48; minPerCc = 5.5; }
+        else if (priceEur <= 84500) { percent = 0.48; minPerCc = 7.5; }
+        else if (priceEur <= 169000) { percent = 0.48; minPerCc = 15; }
+        else { percent = 0.48; minPerCc = 20; }
+        dutyEur = Math.max(priceEur * percent, cc * minPerCc);
+      } else if (ageCategory === '3to5') {
+        let ratePerCc = 1.7;
+        if (cc <= 1000) ratePerCc = 1.5;
+        else if (cc <= 1500) ratePerCc = 1.7;
+        else if (cc <= 1800) ratePerCc = 2.5;
+        else if (cc <= 2300) ratePerCc = 2.7;
+        else if (cc <= 3000) ratePerCc = 3.0;
+        else ratePerCc = 3.6;
+        dutyEur = cc * ratePerCc;
+      } else {
+        let ratePerCc = 3.2;
+        if (cc <= 1000) ratePerCc = 3.0;
+        else if (cc <= 1500) ratePerCc = 3.2;
+        else if (cc <= 1800) ratePerCc = 3.5;
+        else if (cc <= 2300) ratePerCc = 4.8;
+        else if (cc <= 3000) ratePerCc = 5.0;
+        else ratePerCc = 5.7;
+        dutyEur = cc * ratePerCc;
+      }
+      return dutyEur;
+    }
+
+    function getUtilFee(cc, hp, ageCategory, isPhysClient) {
+      const baseRate = 20000;
+      const isUnder3 = (ageCategory === 'under3');
+
+      if (isPhysClient && hp <= 160 && cc <= 3000) {
+        return isUnder3 ? 3400 : 5200;
+      }
+
+      let coeff = 35;
+      if (cc <= 1000) {
+        coeff = (hp <= 160) ? (isUnder3 ? 0.17 : 0.26) : (isUnder3 ? 15 : 28);
+      } else if (cc <= 2000) {
+        if (hp <= 160) coeff = isUnder3 ? 0.17 : 0.26;
+        else if (hp <= 190) coeff = isUnder3 ? 45 : 74.64;
+        else if (hp <= 220) coeff = isUnder3 ? 47.64 : 79.2;
+        else coeff = isUnder3 ? 50.52 : 83.88;
+      } else if (cc <= 3000) {
+        if (hp <= 160) coeff = isUnder3 ? 0.17 : 0.26;
+        else coeff = isUnder3 ? 115.34 : 172.8;
+      } else {
+        coeff = isUnder3 ? 129.2 : 197.8;
+      }
+      return Math.round(baseRate * coeff);
+    }
+
+    function calculateAll() {
+      const aucPriceJpy = Math.max(0, parseFloat(document.getElementById('aucPrice').value) || 0);
+      const engineCc = Math.max(660, parseFloat(document.getElementById('engineCc').value) || 1500);
+      const horsePower = Math.max(30, parseFloat(document.getElementById('horsePower').value) || 120);
+      const isPhysClient = document.getElementById('targetClient').value === 'phys';
+
+      const ageData = getCarAgeData();
+      
+      let ageText = '';
+      if (ageData.category === 'under3') ageText = 'Младше 3 лет (Новое)';
+      else if (ageData.category === '3to5') ageText = 'От 3 до 5 лет (✅ Проходное)';
+      else if (ageData.category === '5to7') ageText = 'От 5 до 7 лет';
+      else ageText = 'Старше 7 лет (Непроходное)';
+      document.getElementById('carAgeText').textContent = ageText + ` (~${(ageData.exactYears).toFixed(1)} г.)`;
+
+      const rateUsd = parseFloat(document.getElementById('rateUsd').value) || 80.15;
+      const rateEur = parseFloat(document.getElementById('rateEur').value) || 93.26;
+      const rateJpy100 = parseFloat(document.getElementById('rateJpy').value) || 53.62;
+
+      const cbrJpyToRub = rateJpy100 / 100;
+      const bankJpyToRub = cbrJpyToRub * 1.10; // Установлен спред банка +10%
+
+      const inlandAndFreightJpy = 150000;
+
+      const japanJpyPart = aucPriceJpy + inlandAndFreightJpy;
+      const japanRub = Math.round(japanJpyPart * bankJpyToRub);
+
+      const dutyEur = calculateCustomsDutyEur(aucPriceJpy, engineCc, ageData.category, rateEur, rateJpy100);
+      const customsFee = 3100;
+      const dutyRub = Math.round(dutyEur * rateEur + customsFee);
+
+      const utilRub = getUtilFee(engineCc, horsePower, ageData.category, isPhysClient);
+
+      const fixedRussianExpenses = 70000 + 30000;
+      const russiaRub = dutyRub + utilRub + fixedRussianExpenses;
+
+      const grandTotalRub = japanRub + russiaRub;
+      const grandTotalUsd = Math.round(grandTotalRub / rateUsd);
+
+      document.getElementById('rowAucJpy').textContent = Math.round(aucPriceJpy).toLocaleString() + ' JPY';
+      document.getElementById('subJapanRub').textContent = japanRub.toLocaleString() + ' ₽';
+      document.getElementById('rowDutyRub').textContent = dutyRub.toLocaleString() + ' ₽';
+      document.getElementById('rowUtilRub').textContent = utilRub.toLocaleString() + ' ₽';
+
+      document.getElementById('totalRubText').textContent = grandTotalRub.toLocaleString();
+      document.getElementById('totalUsdText').textContent = '(' + grandTotalUsd.toLocaleString() + '$)';
+    }
+
+    async function fetchCBRRates() {
+      try {
+        const response = await fetch('https://www.cbr-xml-daily.ru/daily_json.js');
+        if (!response.ok) throw new Error('Ошибка сети');
+        const data = await response.json();
+
+        document.getElementById('rateUsd').value = data.Valute.USD.Value.toFixed(2);
+        document.getElementById('rateEur').value = data.Valute.EUR.Value.toFixed(2);
+        document.getElementById('rateJpy').value = data.Valute.JPY.Value.toFixed(2);
+
+        calculateAll();
+        const dateStr = new Date(data.Date).toLocaleDateString('ru-RU');
+        document.getElementById('rateFooterText').innerHTML = `✅ ЦБ РФ на ${dateStr} (Комиссия банка / спред учтены: +10%).`;
+      } catch (error) {
+        console.warn('Не удалось загрузить курсы ЦБ', error);
+        calculateAll();
+        document.getElementById('rateFooterText').innerHTML = `⚠️ Используются базовые курсы.`;
+      }
+    }
+
+    function copyEstimate() {
+      const totalRub = document.getElementById('totalRubText').textContent;
+      const aucPrice = document.getElementById('aucPrice').value;
+      const text = `Расчет авто («АвтоДешевле»):\n• Аукцион: ${aucPrice} JPY\n• ИТОГО ВО ВЛАДИВОСТОКЕ: ${totalRub} ₽\nhttps://avtodeshevle.ru`;
+      navigator.clipboard.writeText(text).then(() => alert('Расчет скопирован!'));
+    }
+
+    fetchCBRRates();
+  </script>
+</body>
+</html>
