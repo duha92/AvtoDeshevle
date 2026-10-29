@@ -2,9 +2,12 @@
 <html lang="ru" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>АвтоДешевле — Привоз авто из Японии во Владивосток</title>
   
+  <!-- Фавикон в виде вашего точного 6-лепесткового логотипа -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 100'%3E%3Crect width='120' height='100' rx='22' fill='%23ffffff'/%3E%3Cpath d='M 57.5 19.6 A 32 32 0 1 0 57.5 80.4 A 37 37 0 0 1 57.5 19.6 Z' fill='%231c1c1c'/%3E%3Cg transform='translate(76, 50)' fill='%23e85319'%3E%3Cpath d='M 4.1 -11.3 L 10.6 -29.1 A 31 31 0 0 1 29.1 -10.6 L 11.3 -4.1 A 12 12 0 0 0 4.1 -11.3 Z'/%3E%3Cpath d='M 4.1 -11.3 L 10.6 -29.1 A 31 31 0 0 1 29.1 -10.6 L 11.3 -4.1 A 12 12 0 0 0 4.1 -11.3 Z' transform='rotate(60)'/%3E%3Cpath d='M 4.1 -11.3 L 10.6 -29.1 A 31 31 0 0 1 29.1 -10.6 L 11.3 -4.1 A 12 12 0 0 0 4.1 -11.3 Z' transform='rotate(120)'/%3E%3Cpath d='M 4.1 -11.3 L 10.6 -29.1 A 31 31 0 0 1 29.1 -10.6 L 11.3 -4.1 A 12 12 0 0 0 4.1 -11.3 Z' transform='rotate(180)'/%3E%3Cpath d='M 4.1 -11.3 L 10.6 -29.1 A 31 31 0 0 1 29.1 -10.6 L 11.3 -4.1 A 12 12 0 0 0 4.1 -11.3 Z' transform='rotate(240)'/%3E%3Cpath d='M 4.1 -11.3 L 10.6 -29.1 A 31 31 0 0 1 29.1 -10.6 L 11.3 -4.1 A 12 12 0 0 0 4.1 -11.3 Z' transform='rotate(300)'/%3E%3C/g%3E%3C/svg%3E">
+
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- FontAwesome Icons -->
@@ -39,7 +42,6 @@
     }
   </script>
   <style>
-    /* МИРОВОЙ СТАНДАРТ ПРЕМИАЛЬНОГО ФОНА: Глубокий градиент + Инженерная сетка */
     body {
       background-color: #030508;
       color: #f3f5f8;
@@ -69,7 +71,6 @@
 </head>
 <body class="font-sans antialiased selection:bg-brand-brightOrange selection:text-white pb-24 md:pb-0 relative overflow-x-hidden">
 
-  <!-- СВЕТОВЫЕ АТМОСФЕРНЫЕ АУРА-АКЦЕНТЫ НА ЗАДНЕМ ФОНЕ -->
   <div class="fixed top-[-10%] left-[20%] w-[700px] h-[700px] bg-brand-brightOrange/5 rounded-full blur-[160px] pointer-events-none -z-10"></div>
   <div class="fixed bottom-[-10%] right-[10%] w-[600px] h-[600px] bg-blue-600/5 rounded-full blur-[160px] pointer-events-none -z-10"></div>
 
@@ -78,33 +79,35 @@
     <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1920&auto=format&fit=crop')] bg-cover bg-center opacity-20 -z-10"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-[#05070a]/95 via-[#0b0d10]/90 to-[#05070a]/95 -z-10"></div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-2 sm:gap-4">
       
       <!-- LEFT: BURGER BUTTON & LOGO -->
-      <div class="flex items-center gap-3">
-        <button onclick="toggleMobileMenu()" class="w-10 h-10 rounded-xl bg-brand-card/90 hover:bg-brand-cardHover border border-brand-cardBorder text-white flex items-center justify-center transition-colors shadow-lg cursor-pointer">
+      <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
+        <button onclick="toggleMobileMenu()" class="w-10 h-10 rounded-xl bg-brand-card/90 hover:bg-brand-cardHover border border-brand-cardBorder text-white flex items-center justify-center transition-colors shadow-lg cursor-pointer shrink-0">
           <i class="fa-solid fa-bars text-lg text-brand-brightOrange"></i>
         </button>
 
-        <a href="#" class="flex items-center gap-3 group shrink-0">
-          <div class="h-11 px-3 bg-white rounded-2xl flex items-center justify-center shadow-lg shrink-0 group-hover:scale-105 transition-transform">
-            <svg viewBox="0 0 210 120" class="h-8 w-auto">
-              <path d="M 85 16 A 46 46 0 1 0 85 104 A 54 54 0 0 1 85 16 Z" fill="#1c1c1c" />
-              <g fill="#e85319">
-                <path d="M 106 23 A 44 44 0 0 1 124 16 C 127 28, 129 34, 133 34 C 137 34, 139 28, 142 16 A 44 44 0 0 1 160 23 L 143 44 C 136 39, 130 39, 123 44 Z" />
-                <path d="M 106 97 A 44 44 0 0 0 124 104 C 127 92, 129 86, 133 86 C 137 86, 139 92, 142 104 A 44 44 0 0 0 160 97 L 143 76 C 136 81, 130 81, 123 76 Z" />
-                <path d="M 96 33 A 44 44 0 0 0 89 51 C 101 54, 107 56, 107 60 C 107 64, 101 66, 89 69 A 44 44 0 0 0 96 87 L 117 70 C 112 63, 112 57, 117 50 Z" />
-                <path d="M 170 33 A 44 44 0 0 1 177 51 C 165 54, 159 56, 159 60 C 159 64, 165 66, 177 69 A 44 44 0 0 1 170 87 L 149 70 C 154 63, 154 57, 149 50 Z" />
+        <a href="#" class="flex items-center gap-2.5 sm:gap-3 group min-w-0">
+          <div class="h-10 sm:h-11 px-2.5 sm:px-3 bg-white rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg shrink-0 group-hover:scale-105 transition-transform">
+            <svg viewBox="0 0 120 100" class="h-7 sm:h-8 w-auto">
+              <path d="M 57.5 19.6 A 32 32 0 1 0 57.5 80.4 A 37 37 0 0 1 57.5 19.6 Z" fill="#1c1c1c" />
+              <g transform="translate(76, 50)" fill="#e85319">
+                <path d="M 4.1 -11.3 L 10.6 -29.1 A 31 31 0 0 1 29.1 -10.6 L 11.3 -4.1 A 12 12 0 0 0 4.1 -11.3 Z"/>
+                <path d="M 4.1 -11.3 L 10.6 -29.1 A 31 31 0 0 1 29.1 -10.6 L 11.3 -4.1 A 12 12 0 0 0 4.1 -11.3 Z" transform="rotate(60)"/>
+                <path d="M 4.1 -11.3 L 10.6 -29.1 A 31 31 0 0 1 29.1 -10.6 L 11.3 -4.1 A 12 12 0 0 0 4.1 -11.3 Z" transform="rotate(120)"/>
+                <path d="M 4.1 -11.3 L 10.6 -29.1 A 31 31 0 0 1 29.1 -10.6 L 11.3 -4.1 A 12 12 0 0 0 4.1 -11.3 Z" transform="rotate(180)"/>
+                <path d="M 4.1 -11.3 L 10.6 -29.1 A 31 31 0 0 1 29.1 -10.6 L 11.3 -4.1 A 12 12 0 0 0 4.1 -11.3 Z" transform="rotate(240)"/>
+                <path d="M 4.1 -11.3 L 10.6 -29.1 A 31 31 0 0 1 29.1 -10.6 L 11.3 -4.1 A 12 12 0 0 0 4.1 -11.3 Z" transform="rotate(300)"/>
               </g>
             </svg>
           </div>
           
-          <div class="flex flex-col">
-            <span class="text-lg sm:text-xl font-black tracking-wider uppercase text-white leading-none group-hover:text-brand-brightOrange transition-colors">
+          <div class="flex flex-col truncate">
+            <span class="text-base sm:text-xl font-black tracking-wider uppercase text-white leading-none group-hover:text-brand-brightOrange transition-colors truncate">
               АВТОДЕШЕВЛЕ
             </span>
-            <span class="text-[9px] font-bold tracking-widest text-brand-orange uppercase mt-1">
-              Максимальная выгода для вашего бюджета
+            <span class="text-[8px] sm:text-[9px] font-bold tracking-widest text-brand-orange uppercase mt-1 truncate">
+              Экономим ваш бюджет: честная цена без посредников и переплат
             </span>
           </div>
         </a>
@@ -112,19 +115,21 @@
 
       <!-- CENTER: DESKTOP NAVIGATION MENU -->
       <nav class="hidden md:flex items-center gap-8 text-sm font-bold text-brand-textMuted">
-        <a href="#calculator" class="hover:text-white transition-colors">Калькулятор</a>
+        <a href="calculator.html" target="_blank" rel="noopener noreferrer" class="text-brand-brightOrange hover:text-white transition-colors flex items-center gap-1.5">
+          <i class="fa-solid fa-calculator"></i> Калькулятор ↗
+        </a>
         <a href="#conditions" class="hover:text-white transition-colors">Условия</a>
         <a href="#catalog" class="hover:text-white transition-colors">Примеры авто</a>
         <a href="#contacts" class="hover:text-white transition-colors">Контакты</a>
       </nav>
 
       <!-- RIGHT: INTERACTIVE CONTACT DROPDOWN -->
-      <div class="relative">
+      <div class="relative shrink-0">
         <button onclick="toggleContactDropdown()" id="contactBtn"
-                class="h-10 px-4 bg-brand-brightOrange hover:bg-brand-darkOrange text-white font-bold rounded-xl text-xs sm:text-sm flex items-center gap-2 transition-all shadow-lg cursor-pointer">
-          <i class="fa-solid fa-headset text-base"></i>
+                class="h-10 px-3 sm:px-4 bg-brand-brightOrange hover:bg-brand-darkOrange text-white font-bold rounded-xl text-xs sm:text-sm flex items-center gap-1.5 sm:gap-2 transition-all shadow-lg cursor-pointer">
+          <i class="fa-solid fa-headset text-sm sm:text-base"></i>
           <span>Связаться</span>
-          <i class="fa-solid fa-chevron-down text-xs transition-transform" id="contactChevron"></i>
+          <i class="fa-solid fa-chevron-down text-[10px] sm:text-xs transition-transform" id="contactChevron"></i>
         </button>
 
         <div id="contactDropdown" class="absolute right-0 mt-3 w-64 bg-[#14171f] border border-brand-cardBorder rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.8)] hidden flex-col p-2 z-[99999]">
@@ -158,8 +163,8 @@
   </header>
 
   <!-- MOBILE / SIDEBAR MENU OVERLAY -->
-  <div id="mobileMenu" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex-col justify-start p-6 transition-all">
-    <div class="bg-brand-card/95 backdrop-blur-md border border-brand-cardBorder rounded-3xl p-6 max-w-sm w-full mx-auto mt-12 shadow-2xl space-y-6 relative">
+  <div id="mobileMenu" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex-col justify-start p-4 sm:p-6 transition-all">
+    <div class="bg-brand-card/95 backdrop-blur-md border border-brand-cardBorder rounded-3xl p-5 sm:p-6 max-w-sm w-full mx-auto mt-10 shadow-2xl space-y-5 relative">
       <div class="flex items-center justify-between pb-4 border-b border-brand-cardBorder">
         <span class="text-lg font-black text-white">Меню сайта</span>
         <button onclick="toggleMobileMenu()" class="w-9 h-9 rounded-full bg-brand-bg text-white font-bold flex items-center justify-center hover:bg-brand-brightOrange transition-colors cursor-pointer">
@@ -167,15 +172,16 @@
         </button>
       </div>
 
-      <div class="space-y-3 font-bold text-base">
-        <a href="#calculator" onclick="toggleMobileMenu()" class="block p-3 rounded-xl bg-brand-bg hover:bg-brand-brightOrange/20 hover:text-brand-brightOrange transition-colors">
-          🧮 Калькулятор стоимости
-        </a>
-        <a href="#conditions" onclick="toggleMobileMenu()" class="block p-3 rounded-xl bg-brand-bg hover:bg-brand-brightOrange/20 hover:text-brand-brightOrange transition-colors">
-          📄 Условия и гарантии заказа
+      <div class="space-y-3 font-bold text-sm sm:text-base">
+        <a href="calculator.html" target="_blank" rel="noopener noreferrer" onclick="toggleMobileMenu()" class="flex items-center justify-between p-3.5 rounded-xl bg-brand-brightOrange/20 border border-brand-brightOrange/50 text-white hover:bg-brand-brightOrange transition-colors">
+          <span>🧮 Калькулятор стоимости</span>
+          <span>↗</span>
         </a>
         <a href="#catalog" onclick="toggleMobileMenu()" class="block p-3 rounded-xl bg-brand-bg hover:bg-brand-brightOrange/20 hover:text-brand-brightOrange transition-colors">
           🚗 Примеры доставленных авто
+        </a>
+        <a href="#conditions" onclick="toggleMobileMenu()" class="block p-3 rounded-xl bg-brand-bg hover:bg-brand-brightOrange/20 hover:text-brand-brightOrange transition-colors">
+          📄 Условия и гарантии заказа
         </a>
         <a href="#contacts" onclick="toggleMobileMenu()" class="block p-3 rounded-xl bg-brand-bg hover:bg-brand-brightOrange/20 hover:text-brand-brightOrange transition-colors">
           📞 Контакты и связь
@@ -184,200 +190,143 @@
           🔒 Политика конфиденциальности (ФЗ-152)
         </a>
       </div>
-
-      <div class="pt-4 border-t border-brand-cardBorder space-y-2">
-        <div class="text-xs text-brand-textMuted font-bold">Быстрая связь:</div>
-        <div class="grid grid-cols-2 gap-2">
-          <a href="https://t.me/AvtoDeshevleVL" target="_blank" class="bg-[#0088cc]/20 text-[#0088cc] p-2.5 rounded-xl text-xs font-bold text-center">Telegram</a>
-          <a href="https://wa.me/79143275734" target="_blank" class="bg-[#25D366]/20 text-[#25D366] p-2.5 rounded-xl text-xs font-bold text-center">WhatsApp</a>
-        </div>
-      </div>
     </div>
   </div>
 
   <!-- MAIN CONTAINER -->
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 mt-6">
+  <main class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 space-y-10 sm:space-y-12 mt-4 sm:mt-6">
 
     <!-- HERO SECTION -->
-    <section class="relative rounded-3xl overflow-hidden border border-brand-cardBorder shadow-2xl py-24 sm:py-32 px-6 text-center">
+    <section class="relative rounded-3xl overflow-hidden border border-brand-cardBorder shadow-2xl py-14 sm:py-28 px-4 sm:px-6 text-center">
       <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=1920&auto=format&fit=crop')] bg-cover bg-center opacity-40"></div>
       <div class="absolute inset-0 bg-gradient-to-b from-[#0b0d10]/60 via-[#0b0d10]/80 to-[#0b0d10]/95"></div>
 
       <div class="relative z-10 max-w-4xl mx-auto">
-        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-brightOrange/20 border border-brand-brightOrange/50 text-brand-brightOrange text-xs sm:text-sm font-bold mb-6 backdrop-blur-md">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-brand-brightOrange/20 border border-brand-brightOrange/50 text-brand-brightOrange text-xs sm:text-sm font-bold mb-5 backdrop-blur-md">
           <i class="fa-solid fa-ship"></i> Прямой привоз автомобилей из Японии во Владивосток
         </div>
-        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight drop-shadow-lg">
+        <h1 class="text-2xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight drop-shadow-lg">
           Автомобили под заказ с аукционов Японии
         </h1>
-        <p class="mt-5 text-base sm:text-xl text-brand-textMuted max-w-3xl mx-auto leading-relaxed font-medium">
+        <p class="mt-4 sm:mt-5 text-sm sm:text-xl text-brand-textMuted max-w-3xl mx-auto leading-relaxed font-medium">
           Прозрачный расчёт стоимости «под ключ» во Владивостоке. Фиксированная комиссия <span class="text-white font-bold">30 000 ₽</span>, 100% возвратный аванс и прямая оплата по инвойсу.
         </p>
+        <div class="mt-7 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5 max-w-lg mx-auto">
+          <a href="calculator.html" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto flex-1 bg-brand-brightOrange hover:bg-brand-darkOrange text-white font-black py-4 px-6 rounded-2xl text-sm sm:text-base flex items-center justify-center gap-2.5 shadow-xl transition-all">
+            <i class="fa-solid fa-calculator text-lg"></i>
+            <span>Открыть калькулятор авто ↗</span>
+          </a>
+          <a href="#catalog" class="w-full sm:w-auto bg-brand-card/90 hover:bg-brand-cardHover border border-brand-cardBorder text-white font-bold py-4 px-6 rounded-2xl text-sm sm:text-base transition-all">
+            Примеры авто ↓
+          </a>
+        </div>
       </div>
     </section>
 
-    <!-- CALCULATOR SECTION -->
-    <section id="calculator" class="bg-brand-card/85 backdrop-blur-md border border-brand-cardBorder rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+    <!-- КАТАЛОГ ПРИМЕРОВ АВТО -->
+    <section id="catalog" class="py-2">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-6 sm:mb-8 gap-4">
+        <div>
+          <h2 class="text-2xl sm:text-4xl font-black text-white">Примеры доставленных авто</h2>
+          <p class="text-sm sm:text-lg text-brand-textMuted mt-1.5">Реальные автомобили с итоговыми ценами под ключ во Владивостоке</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8" id="catalogGrid"></div>
+    </section>
+
+    <!-- БЛОК ПРИГЛАШЕНИЯ В КАЛЬКУЛЯТОР -->
+    <section class="bg-brand-card/85 backdrop-blur-md border border-brand-cardBorder rounded-3xl p-5 sm:p-10 shadow-2xl relative overflow-hidden">
       <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1920&auto=format&fit=crop')] bg-cover bg-center opacity-25 -z-10"></div>
       <div class="absolute inset-0 bg-[#0b0d10]/85 -z-10"></div>
 
-      <div class="flex items-center gap-4 mb-8">
-        <div class="w-12 h-12 rounded-2xl bg-brand-brightOrange/15 border border-brand-brightOrange/40 flex items-center justify-center text-brand-brightOrange text-xl font-bold">
-          <i class="fa-solid fa-calculator"></i>
-        </div>
-        <div>
-          <h2 class="text-2xl sm:text-3xl font-black text-white">Калькулятор привоза авто</h2>
-          <p class="text-sm sm:text-base text-brand-textMuted">Точный расчёт всех расходов во Владивостоке</p>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-        
-        <div class="space-y-3">
-          <label class="block text-sm font-bold uppercase tracking-wider text-brand-textMuted">
-            Цена на аукционе в Японии (¥ иены)
-          </label>
-          <div class="relative">
-            <input type="number" id="auctionPrice" value="1000000" oninput="calculateTotal()" 
-                   class="w-full bg-brand-bg/95 border border-brand-cardBorder rounded-2xl px-5 py-4 text-white font-black text-xl focus:outline-none focus:border-brand-brightOrange transition-colors">
-            <span class="absolute right-5 top-1/2 -translate-y-1/2 text-brand-textMuted font-bold text-xl">¥</span>
+      <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+        <div class="space-y-3 max-w-2xl">
+          <div class="inline-flex items-center gap-2 text-brand-brightOrange font-bold text-xs sm:text-sm uppercase tracking-wider">
+            <i class="fa-solid fa-calculator"></i> Точный онлайн-расчёт пошлины и расходов
           </div>
-          <!-- Обновленная ссылка на Drom.ru -->
+          <h2 class="text-2xl sm:text-3xl font-black text-white">Рассчитайте стоимость любого автомобиля</h2>
+          <p class="text-sm sm:text-base text-brand-textMuted leading-relaxed">
+            Наш калькулятор автоматически загружает курсы валют ЦБ РФ, учитывает месяц и год выпуска (проходные и непроходные авто), утильсбор и все расходы до Владивостока.
+          </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row lg:flex-col gap-3 w-full lg:w-80 shrink-0">
+          <a href="calculator.html" target="_blank" rel="noopener noreferrer" 
+             class="flex items-center justify-center gap-2.5 w-full bg-brand-brightOrange hover:bg-brand-darkOrange text-white font-black py-4 px-5 rounded-2xl text-sm sm:text-base transition-all shadow-lg text-center">
+            <i class="fa-solid fa-up-right-from-square"></i>
+            <span>Открыть калькулятор ↗</span>
+          </a>
           <a href="https://www.drom.ru/world/japan/" target="_blank" rel="noopener noreferrer" 
-             class="flex items-center justify-center gap-2.5 w-full bg-brand-brightOrange/15 hover:bg-brand-brightOrange/25 border border-brand-brightOrange/40 text-brand-brightOrange font-bold py-3.5 px-4 rounded-xl text-sm transition-all shadow-md">
-            <i class="fa-solid fa-chart-line text-lg"></i>
-            <span>Статистика продаж на Drom.ru</span>
+             class="flex items-center justify-center gap-2.5 w-full bg-brand-brightOrange/15 hover:bg-brand-brightOrange/25 border border-brand-brightOrange/40 text-brand-brightOrange font-bold py-3.5 px-4 rounded-2xl text-xs sm:text-sm transition-all shadow-md text-center">
+            <i class="fa-solid fa-chart-line text-base"></i>
+            <span>Статистика продаж на Drom.ru ↗</span>
           </a>
-        </div>
-
-        <div class="space-y-3">
-          <label class="block text-sm font-bold uppercase tracking-wider text-brand-textMuted">
-            Таможенная пошлина в РФ (₽ рубли)
-          </label>
-          <div class="relative">
-            <input type="number" id="customsDuty" value="250000" oninput="calculateTotal()" 
-                   class="w-full bg-brand-bg/95 border border-brand-cardBorder rounded-2xl px-5 py-4 text-white font-black text-xl focus:outline-none focus:border-brand-brightOrange transition-colors">
-            <span class="absolute right-5 top-1/2 -translate-y-1/2 text-brand-textMuted font-bold text-xl">₽</span>
-          </div>
-          <a href="https://www.tks.ru/auto/calc/" target="_blank" rel="noopener noreferrer" 
-             class="flex items-center justify-center gap-2.5 w-full bg-brand-brightOrange/15 hover:bg-brand-brightOrange/25 border border-brand-brightOrange/40 text-brand-brightOrange font-bold py-3.5 px-4 rounded-xl text-sm transition-all shadow-md">
-            <i class="fa-solid fa-calculator text-lg"></i>
-            <span>Посчитать пошлину на TKS.ru</span>
-          </a>
-        </div>
-
-      </div>
-
-      <div class="bg-brand-bg/95 border border-brand-cardBorder rounded-2xl p-6 sm:p-8 space-y-4 text-base sm:text-lg">
-        <div class="flex justify-between items-center text-brand-textMuted">
-          <span>Аукционная стоимость в рублях (курс 0.60):</span>
-          <span id="auctionRub" class="font-bold text-white">600 000 ₽</span>
-        </div>
-        <div class="flex justify-between items-center text-brand-textMuted">
-          <span>Расходы по Японии + фрахт (120 000 ¥):</span>
-          <span class="font-bold text-white">72 000 ₽</span>
-        </div>
-        <div class="flex justify-between items-center text-brand-textMuted">
-          <span>Расходы в РФ (ПРР, СБКТС, лаборатория, брокер):</span>
-          <span class="font-bold text-white">60 000 ₽</span>
-        </div>
-        <div class="flex justify-between items-center text-brand-textMuted">
-          <span>Комиссия компании «АвтоДешевле»:</span>
-          <span class="font-bold text-brand-brightOrange">30 000 ₽</span>
-        </div>
-        <div class="flex justify-between items-center text-brand-textMuted">
-          <span>Таможенная пошлина:</span>
-          <span id="dutyResult" class="font-bold text-white">250 000 ₽</span>
-        </div>
-
-        <div class="pt-5 border-t border-brand-cardBorder flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-          <span class="text-xl sm:text-2xl font-black text-white">Итоговая стоимость под ключ во Владивостоке:</span>
-          <span id="totalPrice" class="text-3xl sm:text-5xl font-black text-brand-brightOrange">1 012 000 ₽</span>
         </div>
       </div>
     </section>
 
     <!-- INSTRUCTIONS & CONDITIONS SECTION -->
-    <section id="conditions" class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <section id="conditions" class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
       
-      <div class="bg-brand-card/80 backdrop-blur-md border border-brand-cardBorder rounded-3xl p-6 sm:p-10 flex flex-col justify-between shadow-xl relative overflow-hidden">
+      <div class="bg-brand-card/80 backdrop-blur-md border border-brand-cardBorder rounded-3xl p-5 sm:p-10 flex flex-col justify-between shadow-xl relative overflow-hidden">
         <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=1920&auto=format&fit=crop')] bg-cover bg-center opacity-25 -z-10"></div>
         <div class="absolute inset-0 bg-[#0b0d10]/85 -z-10"></div>
 
         <div>
-          <div class="flex items-center gap-4 mb-6">
-            <div class="w-12 h-12 rounded-2xl bg-brand-brightOrange/15 border border-brand-brightOrange/40 flex items-center justify-center text-brand-brightOrange font-bold text-xl shrink-0">
+          <div class="flex items-center gap-3.5 sm:gap-4 mb-5 sm:mb-6">
+            <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-brand-brightOrange/15 border border-brand-brightOrange/40 flex items-center justify-center text-brand-brightOrange font-bold text-lg sm:text-xl shrink-0">
               <i class="fa-solid fa-list-ol"></i>
             </div>
-            <h3 class="text-2xl sm:text-3xl font-black text-white">Как рассчитать стоимость авто</h3>
+            <h3 class="text-xl sm:text-3xl font-black text-white">Как рассчитать стоимость авто</h3>
           </div>
 
-          <ol class="space-y-5 text-base sm:text-lg text-brand-textMuted leading-relaxed">
-            <li class="flex gap-4">
-              <span class="w-8 h-8 rounded-xl bg-brand-brightOrange text-white font-black flex items-center justify-center text-base shrink-0 mt-0.5">1</span>
-              <span>Откройте статистику продаж на <strong class="text-white">Drom.ru</strong> и посмотрите, за сколько иен (¥) продаются нужные вам автомобили на аукционах Японии.</span>
+          <ol class="space-y-4 sm:space-y-5 text-sm sm:text-lg text-brand-textMuted leading-relaxed">
+            <li class="flex gap-3.5 sm:gap-4">
+              <span class="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-brand-brightOrange text-white font-black flex items-center justify-center text-sm sm:text-base shrink-0 mt-0.5">1</span>
+              <span>Откройте статистику продаж на <a href="https://www.drom.ru/world/japan/" target="_blank" class="text-white font-bold underline hover:text-brand-brightOrange">Drom.ru</a> и посмотрите, за сколько иен (¥) продаются нужные вам автомобили в Японии.</span>
             </li>
-            <li class="flex gap-4">
-              <span class="w-8 h-8 rounded-xl bg-brand-brightOrange text-white font-black flex items-center justify-center text-base shrink-0 mt-0.5">2</span>
-              <span>Перейдите на таможенный калькулятор <strong class="text-white">TKS.ru</strong>, укажите год выпуска, объём и мощность двигателя, чтобы узнать точную пошлину в рублях (₽).</span>
+            <li class="flex gap-3.5 sm:gap-4">
+              <span class="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-brand-brightOrange text-white font-black flex items-center justify-center text-sm sm:text-base shrink-0 mt-0.5">2</span>
+              <span>Откройте наш <a href="calculator.html" target="_blank" class="text-white font-bold underline hover:text-brand-brightOrange">Калькулятор привоза авто</a> в отдельной вкладке, укажите цену в иенах, месяц и год выпуска, объём и мощность двигателя.</span>
             </li>
-            <li class="flex gap-4">
-              <span class="w-8 h-8 rounded-xl bg-brand-brightOrange text-white font-black flex items-center justify-center text-base shrink-0 mt-0.5">3</span>
-              <span>Подставьте эти две суммы в наш калькулятор выше — вы сразу получите <strong class="text-white">полную цену авто под ключ во Владивостоке</strong> со всеми расходами.</span>
+            <li class="flex gap-3.5 sm:gap-4">
+              <span class="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-brand-brightOrange text-white font-black flex items-center justify-center text-sm sm:text-base shrink-0 mt-0.5">3</span>
+              <span>Калькулятор автоматически посчитает таможенную пошлину, утильсбор и выдаст <strong class="text-white">полную цену авто под ключ во Владивостоке</strong>.</span>
             </li>
           </ol>
         </div>
 
-        <div class="mt-8 pt-5 border-t border-brand-cardBorder text-sm sm:text-base text-brand-textMuted font-medium">
-          * В автоматический расчёт уже заложены: фрахт 120 000 ¥, услуги таможенного брокера, СБКТС, ПРР (60 000 ₽) и фиксированная комиссия 30 000 ₽.
+        <div class="mt-6 sm:mt-8 pt-4 sm:pt-5 border-t border-brand-cardBorder text-xs sm:text-sm text-brand-textMuted font-medium">
+          * В автоматический расчёт уже заложены: расходы по Японии и фрахт (150 000 ¥), услуги таможенного брокера, СБКТС, ПРР (70 000 ₽) и фиксированная комиссия 30 000 ₽.
         </div>
       </div>
 
-      <div class="bg-brand-card/80 backdrop-blur-md border border-brand-cardBorder rounded-3xl p-6 sm:p-10 flex flex-col justify-between shadow-xl relative overflow-hidden">
+      <div class="bg-brand-card/80 backdrop-blur-md border border-brand-cardBorder rounded-3xl p-5 sm:p-10 flex flex-col justify-between shadow-xl relative overflow-hidden">
         <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1920&auto=format&fit=crop')] bg-cover bg-center opacity-25 -z-10"></div>
         <div class="absolute inset-0 bg-[#0b0d10]/85 -z-10"></div>
 
         <div>
-          <div class="flex items-center gap-4 mb-6">
-            <div class="w-12 h-12 rounded-2xl bg-brand-brightOrange/15 border border-brand-brightOrange/40 flex items-center justify-center text-brand-brightOrange font-bold text-xl shrink-0">
+          <div class="flex items-center gap-3.5 sm:gap-4 mb-5 sm:mb-6">
+            <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-brand-brightOrange/15 border border-brand-brightOrange/40 flex items-center justify-center text-brand-brightOrange font-bold text-lg sm:text-xl shrink-0">
               <i class="fa-solid fa-shield-halved"></i>
             </div>
-            <h3 class="text-2xl sm:text-3xl font-black text-white">Условия заказа и гарантия оплаты</h3>
+            <h3 class="text-xl sm:text-3xl font-black text-white">Условия заказа и гарантия оплаты</h3>
           </div>
 
-          <div class="space-y-5">
-            <div class="bg-brand-bg/95 border border-brand-cardBorder p-5 rounded-2xl">
-              <h4 class="font-black text-white mb-2 flex items-center gap-2.5 text-base sm:text-lg uppercase">
+          <div class="space-y-4 sm:space-y-5">
+            <div class="bg-brand-bg/95 border border-brand-cardBorder p-4 sm:p-5 rounded-2xl">
+              <h4 class="font-black text-white mb-2 flex items-center gap-2 text-sm sm:text-lg uppercase">
                 <i class="fa-solid fa-rotate-left text-brand-brightOrange"></i> 100% Возвратный аванс по договору
               </h4>
-              <p class="text-sm sm:text-base text-brand-textMuted leading-relaxed">
+              <p class="text-xs sm:text-base text-brand-textMuted leading-relaxed">
                 Работаем строго по официальному договору. Если мы не смогли подобрать нужный вам вариант или вы передумали до покупки автомобиля на аукционе — <strong class="text-white">аванс возвращается в полном объёме (100%) без удержаний</strong>.
               </p>
-            </div>
-
-            <div class="bg-brand-bg/95 border border-brand-cardBorder p-5 rounded-2xl space-y-3">
-              <h4 class="font-black text-white mb-2 flex items-center gap-2.5 text-base sm:text-lg uppercase">
-                <i class="fa-solid fa-wallet text-brand-brightOrange"></i> Прозрачная схема из 3 платежей
-              </h4>
-              <ul class="text-sm sm:text-base text-brand-textMuted space-y-2.5 leading-relaxed">
-                <li class="flex items-start gap-2.5">
-                  <span class="text-brand-brightOrange font-bold">•</span>
-                  <span><strong class="text-white">1. Инвойс в Японию (Самостоятельно):</strong> Вы оплачиваете стоимость авто на аукционе и фрахт напрямую в Японию через банк по официальному инвойсу.</span>
-                </li>
-                <li class="flex items-start gap-2.5">
-                  <span class="text-brand-brightOrange font-bold">•</span>
-                  <span><strong class="text-white">2. Таможенная пошлина (Напрямую):</strong> Оплачивается вами самостоятельно по квитанции напрямую в таможенные органы РФ.</span>
-                </li>
-                <li class="flex items-start gap-2.5">
-                  <span class="text-brand-brightOrange font-bold">•</span>
-                  <span><strong class="text-white">3. Брокер + Комиссия (Оплата нам):</strong> Услуги таможенного брокера (СБКТС, лаборатория, ПРР — 60 000 ₽) мы оплачиваем сами, поэтому вы переводите эту сумму вместе с нашей комиссией (30 000 ₽) нам.</span>
-                </li>
-              </ul>
             </div>
           </div>
         </div>
 
-        <div class="mt-8 pt-5 border-t border-brand-cardBorder flex flex-wrap items-center justify-between gap-2 text-base">
+        <div class="mt-6 sm:mt-8 pt-4 sm:pt-5 border-t border-brand-cardBorder flex flex-wrap items-center justify-between gap-2 text-sm sm:text-base">
           <span class="text-brand-textMuted font-medium">Нужна консультация или расчёт?</span>
           <a href="https://t.me/AvtoDeshevleVL" target="_blank" class="text-brand-brightOrange font-black hover:underline">
             Написать в Telegram →
@@ -387,70 +336,40 @@
 
     </section>
 
-    <!-- CATALOG SECTION -->
-    <section id="catalog" class="py-6">
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
-        <div>
-          <h2 class="text-3xl sm:text-4xl font-black text-white">Примеры доставленных авто</h2>
-          <p class="text-base sm:text-lg text-brand-textMuted mt-2">Реальные автомобили с итоговыми ценами под ключ во Владивостоке</p>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="catalogGrid"></div>
-    </section>
-
   </main>
 
   <!-- FOOTER -->
-  <footer id="contacts" class="bg-brand-card/85 backdrop-blur-md border-t border-brand-cardBorder mt-20 py-14 relative overflow-hidden">
+  <footer id="contacts" class="bg-brand-card/85 backdrop-blur-md border-t border-brand-cardBorder mt-14 sm:mt-20 py-10 sm:py-14 relative overflow-hidden">
     <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=1920&auto=format&fit=crop')] bg-cover bg-center opacity-25 -z-10"></div>
     <div class="absolute inset-0 bg-[#07090b]/90 -z-10"></div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10">
       
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-center">
         <div>
-          <span class="text-2xl sm:text-3xl font-black text-white tracking-wider">АВТОДЕШЕВЛЕ</span>
-          <p class="text-brand-textMuted text-base max-w-xl mt-3 leading-relaxed">
+          <span class="text-xl sm:text-3xl font-black text-white tracking-wider">АВТОДЕШЕВЛЕ</span>
+          <p class="text-brand-textMuted text-sm sm:text-base max-w-xl mt-2.5 leading-relaxed">
             Прямой привоз автомобилей с аукционов Японии во Владивосток. Фиксированная комиссия 30 000 ₽, честный договор с возвратным авансом и полное сопровождение.
           </p>
         </div>
 
-        <div class="flex flex-wrap gap-3 lg:justify-end">
+        <div class="flex flex-wrap gap-2.5 sm:gap-3 lg:justify-end">
           <a href="mailto:Avto-Deshevle.2025@yandex.ru"
-             class="h-12 bg-brand-bg hover:bg-brand-cardHover text-white border border-brand-cardBorder font-bold px-5 rounded-xl flex items-center gap-2.5 whitespace-nowrap transition-all">
-            <i class="fa-solid fa-envelope text-brand-brightOrange text-lg"></i> Avto-Deshevle.2025@yandex.ru
+             class="h-11 sm:h-12 bg-brand-bg hover:bg-brand-cardHover text-white border border-brand-cardBorder font-bold px-4 sm:px-5 rounded-xl flex items-center gap-2 text-xs sm:text-sm whitespace-nowrap transition-all">
+            <i class="fa-solid fa-envelope text-brand-brightOrange text-base sm:text-lg"></i> Avto-Deshevle.2025@yandex.ru
           </a>
           <a href="https://t.me/AvtoDeshevleVL" target="_blank" rel="noopener noreferrer"
-             class="h-12 bg-[#0088cc] hover:bg-[#0088cc]/90 text-white font-bold px-5 rounded-xl flex items-center gap-2.5 whitespace-nowrap transition-all">
-            <i class="fa-brands fa-telegram text-xl"></i> Telegram
+             class="h-11 sm:h-12 bg-[#0088cc] hover:bg-[#0088cc]/90 text-white font-bold px-4 sm:px-5 rounded-xl flex items-center gap-2 text-xs sm:text-sm whitespace-nowrap transition-all">
+            <i class="fa-brands fa-telegram text-lg sm:text-xl"></i> Telegram
           </a>
           <a href="https://wa.me/79143275734" target="_blank" rel="noopener noreferrer"
-             class="h-12 bg-[#25D366] hover:bg-[#25D366]/90 text-white font-bold px-5 rounded-xl flex items-center gap-2.5 whitespace-nowrap transition-all">
-            <i class="fa-brands fa-whatsapp text-xl"></i> +7 (914) 327-57-34
-          </a>
-          <a href="#" onclick="alert('Мессенджер MAX: АвтоДешевле (+7 914 327-57-34)'); return false;"
-             class="h-12 bg-brand-brightOrange hover:bg-brand-darkOrange text-white font-bold px-5 rounded-xl flex items-center gap-2.5 whitespace-nowrap transition-all">
-            <i class="fa-solid fa-comments text-lg"></i> MAX
+             class="h-11 sm:h-12 bg-[#25D366] hover:bg-[#25D366]/90 text-white font-bold px-4 sm:px-5 rounded-xl flex items-center gap-2 text-xs sm:text-sm whitespace-nowrap transition-all">
+            <i class="fa-brands fa-whatsapp text-lg sm:text-xl"></i> +7 (914) 327-57-34
           </a>
         </div>
       </div>
 
-      <div class="bg-brand-bg/95 border border-brand-cardBorder rounded-2xl p-6 text-xs sm:text-sm text-brand-textMuted space-y-2 leading-relaxed">
-        <div class="font-bold text-white text-sm sm:text-base mb-1">
-          Политика конфиденциальности и обработка персональных данных (ФЗ-152)
-        </div>
-        <p>
-          Сервис «АвтоДешевле» соблюдает требования Федерального закона РФ № 152-ФЗ «О персональных данных». Используя сайт, вы даёте согласие на обработку файлов cookie и технических данных для корректной работы калькулятора и аналитики. Все контактные данные, передаваемые вами через мессенджеры или электронную почту <strong class="text-white">Avto-Deshevle.2025@yandex.ru</strong>, используются исключительно для расчёта стоимости, подбора и таможенного оформления автомобиля и не передаются третьим лицам без вашего согласия.
-        </p>
-        <div class="pt-2">
-          <button onclick="openPolicyModal()" class="text-brand-brightOrange font-bold underline hover:text-white transition-colors">
-            Открыть полный текст Политики конфиденциальности и обработки персональных данных →
-          </button>
-        </div>
-      </div>
-
-      <div class="pt-6 border-t border-brand-cardBorder flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-brand-textMuted">
+      <div class="pt-5 border-t border-brand-cardBorder flex flex-col sm:flex-row items-center justify-between gap-3 text-xs sm:text-sm text-brand-textMuted text-center sm:text-left">
         <span>© 2026 АвтоДешевле. Все права защищены.</span>
         <a href="#" onclick="openPolicyModal(); return false;" class="hover:text-brand-brightOrange underline font-semibold transition-colors">
           Политика конфиденциальности и обработка персональных данных
@@ -461,48 +380,36 @@
   </footer>
 
   <!-- DETAIL & GALLERY MODAL -->
-  <div id="detailsModal" class="fixed inset-0 z-50 bg-black/90 hidden items-center justify-center p-4 sm:p-6 overflow-y-auto">
+  <div id="detailsModal" class="fixed inset-0 z-50 bg-black/90 hidden items-center justify-center p-3 sm:p-6 overflow-y-auto">
     <div class="bg-brand-card border border-brand-cardBorder rounded-3xl max-w-4xl w-full max-h-[90vh] flex flex-col overflow-hidden shadow-2xl relative">
       
-      <div class="p-6 border-b border-brand-cardBorder flex items-center justify-between gap-4">
+      <div class="p-4 sm:p-6 border-b border-brand-cardBorder flex items-center justify-between gap-4">
         <div>
-          <h3 id="modalTitle" class="text-2xl font-black text-white">Название авто</h3>
-          <p class="text-xs sm:text-sm text-brand-textMuted mt-1">Нажмите на любое фото для полноэкранного просмотра</p>
+          <h3 id="modalTitle" class="text-lg sm:text-2xl font-black text-white">Название авто</h3>
+          <p class="text-xs sm:text-sm text-brand-textMuted mt-0.5">Нажмите на любое фото для полноэкранного просмотра</p>
         </div>
-        <button onclick="closeDetailsModal()" class="w-10 h-10 rounded-full bg-brand-bg hover:bg-brand-brightOrange text-white font-bold flex items-center justify-center transition-all border border-brand-cardBorder">
+        <button onclick="closeDetailsModal()" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-brand-bg hover:bg-brand-brightOrange text-white font-bold flex items-center justify-center transition-all border border-brand-cardBorder shrink-0">
           ✕
         </button>
       </div>
 
-      <div class="p-6 overflow-y-auto custom-scrollbar space-y-6">
-        <div class="bg-brand-brightOrange/15 border border-brand-brightOrange/40 rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-          <span class="text-base font-bold text-white">Итоговая стоимость под ключ во Владивостоке:</span>
-          <span id="modalPrice" class="text-3xl sm:text-4xl font-black text-brand-brightOrange">0 ₽</span>
+      <div class="p-4 sm:p-6 overflow-y-auto custom-scrollbar space-y-5 sm:space-y-6">
+        <div class="bg-brand-brightOrange/15 border border-brand-brightOrange/40 rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-2">
+          <span class="text-xs sm:text-base font-bold text-white">Итоговая стоимость под ключ во Владивостоке:</span>
+          <span id="modalPrice" class="text-2xl sm:text-4xl font-black text-brand-brightOrange">0 ₽</span>
         </div>
 
         <div>
-          <h4 class="text-sm font-bold uppercase tracking-wider text-brand-textMuted mb-3">Характеристики автомобиля:</h4>
-          <div id="modalSpecsGrid" class="grid grid-cols-2 sm:grid-cols-3 gap-3"></div>
+          <h4 class="text-xs sm:text-sm font-bold uppercase tracking-wider text-brand-textMuted mb-2.5">Характеристики автомобиля:</h4>
+          <div id="modalSpecsGrid" class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 sm:gap-3"></div>
         </div>
 
         <div>
-          <div class="flex items-center justify-between mb-3">
-            <h4 class="text-sm font-bold uppercase tracking-wider text-brand-textMuted">Фотографии с аукциона / осмотра:</h4>
-            <span id="modalBadge" class="text-sm font-bold text-brand-brightOrange">0 фото</span>
+          <div class="flex items-center justify-between mb-2.5">
+            <h4 class="text-xs sm:text-sm font-bold uppercase tracking-wider text-brand-textMuted">Фотографии с аукциона / осмотра:</h4>
+            <span id="modalBadge" class="text-xs sm:text-sm font-bold text-brand-brightOrange">0 фото</span>
           </div>
-          <div id="modalGalleryGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3"></div>
-        </div>
-      </div>
-
-      <div class="p-4 border-t border-brand-cardBorder bg-brand-bg flex flex-wrap gap-3 justify-between items-center">
-        <span class="text-xs sm:text-sm text-brand-textMuted font-semibold">Почта: Avto-Deshevle.2025@yandex.ru</span>
-        <div class="flex flex-wrap gap-2">
-          <a href="https://t.me/AvtoDeshevleVL" target="_blank" class="bg-[#0088cc] hover:bg-[#0088cc]/80 text-white font-bold px-4 py-2 rounded-xl text-xs sm:text-sm flex items-center gap-1.5">
-            <i class="fa-brands fa-telegram"></i> Telegram
-          </a>
-          <a href="https://wa.me/79143275734" target="_blank" class="bg-[#25D366] hover:bg-[#25D366]/80 text-white font-bold px-4 py-2 rounded-xl text-xs sm:text-sm flex items-center gap-1.5">
-            <i class="fa-brands fa-whatsapp"></i> WhatsApp
-          </a>
+          <div id="modalGalleryGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2.5 sm:gap-3"></div>
         </div>
       </div>
     </div>
@@ -514,33 +421,29 @@
       <span id="lightboxCounter" class="text-sm font-bold bg-white/10 px-4 py-2 rounded-full backdrop-blur-md">
         Фото 1 из 1
       </span>
-      <button onclick="closeLightbox()" class="w-12 h-12 rounded-full bg-white/10 hover:bg-brand-brightOrange text-white text-2xl font-bold flex items-center justify-center transition-all">
+      <button onclick="closeLightbox()" class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/10 hover:bg-brand-brightOrange text-white text-xl sm:text-2xl font-bold flex items-center justify-center transition-all">
         ✕
       </button>
     </div>
 
     <div class="relative flex-1 flex items-center justify-center my-4 overflow-hidden">
-      <button onclick="prevImage(event)" class="absolute left-2 sm:left-6 z-10 w-12 h-12 rounded-full bg-black/60 hover:bg-brand-brightOrange text-white text-2xl flex items-center justify-center transition-all border border-white/15">
+      <button onclick="prevImage(event)" class="absolute left-2 sm:left-6 z-10 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-brand-brightOrange text-white text-xl sm:text-2xl flex items-center justify-center transition-all border border-white/15">
         ❮
       </button>
       <img id="lightboxImg" src="" alt="Car Image" class="max-h-full max-w-full object-contain rounded-xl shadow-2xl">
-      <button onclick="nextImage(event)" class="absolute right-2 sm:right-6 z-10 w-12 h-12 rounded-full bg-black/60 hover:bg-brand-brightOrange text-white text-2xl flex items-center justify-center transition-all border border-white/15">
+      <button onclick="nextImage(event)" class="absolute right-2 sm:right-6 z-10 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-brand-brightOrange text-white text-xl sm:text-2xl flex items-center justify-center transition-all border border-white/15">
         ❯
       </button>
-    </div>
-
-    <div class="text-center text-brand-textMuted text-xs sm:text-sm font-medium z-10">
-      Используйте стрелки на экране или клавиши ← → на клавиатуре. Esc — закрыть.
     </div>
   </div>
 
   <!-- COOKIE BANNER -->
-  <div id="cookieBanner" class="fixed bottom-4 left-4 right-4 md:left-auto md:right-6 md:max-w-lg z-50 bg-brand-card/95 backdrop-blur-md border border-brand-cardBorder rounded-2xl p-5 shadow-2xl flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm">
+  <div id="cookieBanner" class="fixed bottom-4 left-4 right-4 md:left-auto md:right-6 md:max-w-lg z-50 bg-brand-card/95 backdrop-blur-md border border-brand-cardBorder rounded-2xl p-4 sm:p-5 shadow-2xl flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm">
     <div class="text-brand-textMuted leading-relaxed">
       Мы используем файлы cookie для корректной работы сайта. Продолжая использование сайта, вы соглашаетесь с 
       <a href="#" onclick="openPolicyModal(); return false;" class="text-brand-brightOrange font-bold underline">Политикой конфиденциальности и обработкой персональных данных</a>.
     </div>
-    <button onclick="acceptCookies()" class="bg-brand-brightOrange hover:bg-brand-darkOrange text-white font-bold px-5 py-2.5 rounded-xl shrink-0 transition-colors">
+    <button onclick="acceptCookies()" class="w-full sm:w-auto bg-brand-brightOrange hover:bg-brand-darkOrange text-white font-bold px-5 py-2.5 rounded-xl shrink-0 transition-colors">
       Согласен
     </button>
   </div>
@@ -548,34 +451,16 @@
   <!-- PRIVACY POLICY MODAL -->
   <div id="policyModal" class="fixed inset-0 z-50 bg-black/90 hidden items-center justify-center p-4 sm:p-6 overflow-y-auto">
     <div class="bg-brand-card border border-brand-cardBorder rounded-3xl max-w-3xl w-full max-h-[85vh] flex flex-col overflow-hidden shadow-2xl relative">
-      <div class="p-6 border-b border-brand-cardBorder flex items-center justify-between gap-4">
-        <h3 class="text-lg sm:text-xl font-black text-white">Политика конфиденциальности и обработка персональных данных</h3>
+      <div class="p-5 sm:p-6 border-b border-brand-cardBorder flex items-center justify-between gap-4">
+        <h3 class="text-base sm:text-xl font-black text-white">Политика конфиденциальности и обработка персональных данных</h3>
         <button onclick="closePolicyModal()" class="w-9 h-9 rounded-full bg-brand-bg text-white font-bold flex items-center justify-center hover:bg-brand-brightOrange transition-colors shrink-0">
           ✕
         </button>
       </div>
 
-      <div class="p-6 overflow-y-auto custom-scrollbar text-sm sm:text-base text-brand-textMuted space-y-4 leading-relaxed">
+      <div class="p-5 sm:p-6 overflow-y-auto custom-scrollbar text-xs sm:text-base text-brand-textMuted space-y-4 leading-relaxed">
         <p><strong class="text-white">1. Общие положения</strong><br>
         Настоящая Политика конфиденциальности и обработки персональных данных составлена в соответствии с требованиями Федерального закона Российской Федерации от 27.07.2006 № 152-ФЗ «О персональных данных» и определяет порядок обработки и защиты персональной информации пользователей сайта «АвтоДешевле» (далее — Оператор).</p>
-
-        <p><strong class="text-white">2. Состав обрабатываемых данных</strong><br>
-        • Технические данные, автоматически передаваемые браузером: файлы cookie, IP-адрес, параметры браузера и операционной системы, время посещения.<br>
-        • Контактная информация, добровольно предоставляемая клиентом при обращении через мессенджеры (Telegram, WhatsApp, MAX) или по электронной почте: имя, номер телефона, адрес электронной почты, паспортные и ИНН данные (исключительно при заключении официального договора на привоз и таможенное оформление автомобиля).</p>
-
-        <p><strong class="text-white">3. Цели обработки персональных данных</strong><br>
-        • Расчёт стоимости приобретения, доставки и таможенной очистки автомобилей из Японии;<br>
-        • Заключение и исполнение договора на подбор, покупку, доставку и оформление транспортного средства (СБКТС, ЭПТС, таможенный брокер);<br>
-        • Оперативная связь с клиентом для предоставления отчётов с аукционов.</p>
-
-        <p><strong class="text-white">4. Порядок хранения и защиты данных</strong><br>
-        Оператор принимает все необходимые организационные и технические меры для защиты персональных данных от неправомерного доступа. Персональные данные граждан РФ хранятся исключительно на территории Российской Федерации и не передаются третьим лицам, за исключением случаев прямого исполнения договора (таможенные органы РФ, испытательные лаборатории СБКТС, банки при проведении инвойса).</p>
-
-        <p><strong class="text-white">5. Использование файлов Cookie</strong><br>
-        Файлы cookie используются для сохранения пользовательских расчётов и корректного функционирования интерфейса сайта. Пользователь может в любой момент отключить сохранение файлов cookie в настройках своего браузера.</p>
-
-        <p><strong class="text-white">6. Контактные данные для обращений и отзыва согласия</strong><br>
-        Субъект персональных данных вправе в любой момент отозвать согласие на обработку персональных данных, направив письменное уведомление на электронную почту Оператора: <a href="mailto:Avto-Deshevle.2025@yandex.ru" class="text-brand-brightOrange font-bold underline">Avto-Deshevle.2025@yandex.ru</a> или по телефону <strong class="text-white">+7 (914) 327-57-34</strong>.</p>
       </div>
 
       <div class="p-4 border-t border-brand-cardBorder text-center">
@@ -685,7 +570,7 @@
           "https://i.postimg.cc/1tvxrw9c/f6fedfe4-d3ad-411c-ba0d-a640a0e2f56b.jpg",
           "https://i.postimg.cc/ZRwkxpTH/fcfb5fea-820d-4a36-90fd-f1262a0a0ecd.png"
         ],
-        specs: ["Год: 2016-01", "Объем: 1.2л", "Пробег: 114 000 км", "Привод: Full-time 4WD", "Оценка: 3.5"]
+        specs: ["Год: 2016-01", "Объем: 1.2л", "Пробег: 113 000 км", "Привод: Full-time 4WD", "Оценка: 3.5"]
       },
       {
         title: "Volkswagen Tiguan",
@@ -777,50 +662,31 @@
       }
     ];
 
-    function calculateTotal() {
-      const jpyRate = 0.60;
-      const japanExpensesJpy = 120000;
-      const russiaExpensesRub = 60000;
-      const companyCommissionRub = 30000;
-
-      const auctionJpy = parseFloat(document.getElementById('auctionPrice').value) || 0;
-      const customsRub = parseFloat(document.getElementById('customsDuty').value) || 0;
-
-      const auctionRub = auctionJpy * jpyRate;
-      const japanExpensesRub = japanExpensesJpy * jpyRate;
-
-      const total = auctionRub + japanExpensesRub + russiaExpensesRub + companyCommissionRub + customsRub;
-
-      document.getElementById('auctionRub').innerText = Math.round(auctionRub).toLocaleString('ru-RU') + ' ₽';
-      document.getElementById('dutyResult').innerText = Math.round(customsRub).toLocaleString('ru-RU') + ' ₽';
-      document.getElementById('totalPrice').innerText = Math.round(total).toLocaleString('ru-RU') + ' ₽';
-    }
-
     const catalogGrid = document.getElementById('catalogGrid');
     carsData.forEach((car, carIdx) => {
       const card = document.createElement('div');
       card.className = 'bg-brand-card/85 backdrop-blur-md border border-brand-cardBorder rounded-3xl overflow-hidden flex flex-col group hover:border-brand-brightOrange/60 transition-all duration-300 shadow-xl';
       card.innerHTML = `
-        <div class="relative h-64 cursor-pointer overflow-hidden" onclick="openDetailsModal(${carIdx})">
+        <div class="relative h-56 sm:h-64 cursor-pointer overflow-hidden" onclick="openDetailsModal(${carIdx})">
           <img src="${car.images[0]}" alt="${car.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
           <div class="absolute bottom-3 right-3 bg-black/80 backdrop-blur-md border border-white/15 text-white text-xs font-bold px-3.5 py-1.5 rounded-xl">
             📷 ${car.badge}
           </div>
         </div>
-        <div class="p-6 flex flex-col flex-1">
+        <div class="p-5 sm:p-6 flex flex-col flex-1">
           <h3 class="text-xl sm:text-2xl font-black text-white mb-2">${car.title}</h3>
           
-          <div class="bg-brand-brightOrange/10 border border-brand-brightOrange/30 rounded-2xl px-4 py-3 mb-5 flex items-center justify-between">
+          <div class="bg-brand-brightOrange/10 border border-brand-brightOrange/30 rounded-2xl px-4 py-3 mb-4 sm:mb-5 flex items-center justify-between">
             <span class="text-xs font-bold uppercase text-brand-textMuted">Под ключ:</span>
-            <span class="text-2xl sm:text-3xl font-black text-brand-brightOrange">${car.price}</span>
+            <span class="text-xl sm:text-3xl font-black text-brand-brightOrange">${car.price}</span>
           </div>
           
-          <div class="grid grid-cols-2 gap-2.5 mb-6">
+          <div class="grid grid-cols-2 gap-2 mb-5 sm:mb-6">
             ${car.specs.map(s => `<div class="bg-brand-bg/90 border border-brand-cardBorder text-white text-xs sm:text-sm font-semibold px-3 py-2 rounded-xl">${s}</div>`).join('')}
           </div>
 
           <button onclick="openDetailsModal(${carIdx})" 
-                  class="mt-auto bg-brand-brightOrange hover:bg-brand-darkOrange text-white font-black py-3.5 rounded-2xl text-base text-center transition-colors">
+                  class="mt-auto bg-brand-brightOrange hover:bg-brand-darkOrange text-white font-black py-3.5 rounded-2xl text-sm sm:text-base text-center transition-colors cursor-pointer">
             Смотреть все фото (${car.badge})
           </button>
         </div>
@@ -841,14 +707,14 @@
 
       const specsGrid = document.getElementById('modalSpecsGrid');
       specsGrid.innerHTML = car.specs.map(s => `
-        <div class="bg-brand-bg/90 border border-brand-cardBorder rounded-xl p-3.5 text-center">
+        <div class="bg-brand-bg/90 border border-brand-cardBorder rounded-xl p-3 text-center">
           <span class="text-xs sm:text-sm font-bold text-white block">${s}</span>
         </div>
       `).join('');
 
       const galleryGrid = document.getElementById('modalGalleryGrid');
       galleryGrid.innerHTML = car.images.map((imgSrc, imgIdx) => `
-        <div class="relative h-28 sm:h-32 rounded-xl overflow-hidden cursor-pointer border border-brand-cardBorder hover:border-brand-brightOrange group transition-all"
+        <div class="relative h-24 sm:h-32 rounded-xl overflow-hidden cursor-pointer border border-brand-cardBorder hover:border-brand-brightOrange group transition-all"
              onclick="openLightbox(${carIdx}, ${imgIdx})">
           <img src="${imgSrc}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
         </div>
@@ -929,7 +795,7 @@
       const btn = document.getElementById('contactBtn');
       const dropdown = document.getElementById('contactDropdown');
       const chevron = document.getElementById('contactChevron');
-      if (!btn.contains(e.target) && !dropdown.contains(e.target)) {
+      if (btn && dropdown && !btn.contains(e.target) && !dropdown.contains(e.target)) {
         dropdown.classList.add('hidden');
         dropdown.classList.remove('flex');
         chevron.style.transform = 'rotate(0deg)';
@@ -977,8 +843,6 @@
         if (e.key === 'Escape') toggleMobileMenu();
       }
     });
-
-    calculateTotal();
   </script>
 </body>
 </html>
